@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.limit.json?api_key=api-key&api_user=api-user&task=retrieve&user=user-test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Thu, 31 Oct 2013 19:23:26 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '77'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.21
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=27f5b467997dd8d1d07c1f07d3595f22:fa68acd2f10e588be3ec22cc7f80ec09f71a8536;
+        expires=Sat, 30-Nov-2013 20:23:26 GMT; path=/; httponly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '[{"credit":"0","credit_remain":"500","last_reset":"2013-10-31"}]'
+    http_version: 
+  recorded_at: Thu, 31 Oct 2013 19:23:26 GMT
+recorded_with: VCR 2.6.0

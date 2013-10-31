@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sendgrid.com/api/mail.send.json
+    body:
+      encoding: US-ASCII
+      string: from=from%40email.com&to=to%40email.com&subject=Rspec+test&text=text&html=html&api_user=api-user&api_key=api-key
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Thu, 31 Oct 2013 15:14:44 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
+    http_version: 
+  recorded_at: Thu, 31 Oct 2013 15:14:44 GMT
+recorded_with: VCR 2.6.0

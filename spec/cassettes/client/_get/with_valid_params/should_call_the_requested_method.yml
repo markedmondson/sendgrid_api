@@ -1,0 +1,308 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.profile.json?api_key=api-key&api_user=api-user&task=get
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Thu, 31 Oct 2013 15:14:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.21
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=d65d3503efd6c13638b6448e453a9b53:040e1eef1dd34538952b2925a67b0f06c830b9b5;
+        expires=Sat, 30-Nov-2013 16:14:43 GMT; path=/; httponly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '[{"username":"guestfoliov1","email":"support@guestfolio.com","active":"true","first_name":"Mark","last_name":"Edmondson","address":"1200
+        Alpha Lake Road","address2":"","city":"Whistler","state":"BC","zip":"V0N1B1","country":"CA","phone":"Canada","website":"http:\/\/www.guestfolio.net","website_access":"false"},{"username":"gf-tweedsmuir-park-lodge","email":"sendgrid+hotel.152@guestfolio.com","active":"true","first_name":"Tweedsmuir
+        Park Lodge","last_name":"Guestfolio","address":"7001 Corbould Drive","address2":"","city":"Bella
+        Coola","state":"BC","zip":"N\/a","country":"Canad","phone":"1 (604) 905-4994","website":"http:\/\/www.tweedsmuirparklodge.com","website_access":"false"},{"username":"gf-kasbah-tamadot","email":"sendgridgf-+hotel.158@guestfolio.com","active":"true","first_name":"Kasbah
+        Tamadot","last_name":"Guestfolio","address":"Marrakech, Marrakesh 042150","address2":"","city":"Marrakesh","state":"Region
+        de Marrakech-Tensift-Al Haouz","zip":"N\/a","country":"Moroc","phone":"N\/a","website":"http:\/\/www.kasbahtamadot.virgin.com\/","website_access":"false"},{"username":"gf-a-default-hotel","email":"sendgridgf-+hotel.25@guestfolio.com","active":"true","first_name":"A    default
+        hotel","last_name":"Guestfolio","address":"791 West Georgia","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"555","website":"http:\/\/","website_access":"false"},{"username":"gf-aava-whistler-hotel","email":"sendgridgf-+hotel.139@guestfolio.com","active":"true","first_name":"Aava
+        Whistler Hotel","last_name":"Guestfolio","address":"4005 Whistler Way","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"1-800-663-5644","website":"http:\/\/www.aavawhistlerhotel.com","website_access":"false"},{"username":"gf-alexander-house-hotel","email":"sendgridgf-+hotel.106@guestfolio.com","active":"true","first_name":"Alexander
+        House Hotel","last_name":"Guestfolio","address":"East Street, Turner''s Hill","address2":"","city":"Crawley","state":"England","zip":"N\/a","country":"Unite","phone":"+44
+        (0)1342 714 914","website":"http:\/\/www.alexanderhotels.co.uk\/alexander-house-luxury-hotel-sussex\/","website_access":"false"},{"username":"gf-alila-villas-soori","email":"sendgridgf-+hotel.34@guestfolio.com","active":"true","first_name":"Alila
+        Villas Soori","last_name":"Guestfolio","address":"Alila Villas Soori, Kelating,
+        Kerambitan, Tabanan, Bali 82161","address2":"","city":"Tabanan","state":"Bali","zip":"N\/a","country":"Indon","phone":"+62
+        361 894 6388","website":"http:\/\/www.alilahotels.com\/soori","website_access":"false"},{"username":"gf-alila-villas-uluwatu","email":"sendgridgf-+hotel.42@guestfolio.com","active":"true","first_name":"Alila
+        Villas Uluwatu","last_name":"Guestfolio","address":"Alila Villas Uluwatu,
+        Jl Belimbing Sari  Banjar Tambiyak","address2":"","city":"Tabanan","state":"Bali","zip":"N\/a","country":"Indon","phone":"+62
+        361 848 2166","website":"http:\/\/www.alilahotels.com\/uluwatu","website_access":"false"},{"username":"gf-ambassador-conference-resort","email":"sendgridgf-+hotel.4@guestfolio.com","active":"true","first_name":"Ambassador
+        Conference Resort","last_name":"Guestfolio","address":"1550 Princess","address2":"","city":"Kingston","state":"ON","zip":"N\/a","country":"Canad","phone":"800-267-7880
+        ","website":"http:\/\/www.ambassadorhotel.com","website_access":"false"},{"username":"gf-ameritania","email":"sendgridgf-+hotel.43@guestfolio.com","active":"true","first_name":"Ameritania","last_name":"Guestfolio","address":"230
+        West 54th","address2":"","city":"New York","state":"New York","zip":"N\/a","country":"Unite","phone":"212-247-5000","website":"http:\/\/www.ameritanianyc.com\/","website_access":"false"},{"username":"gf-amsterdam-court","email":"sendgridgf-+hotel.47@guestfolio.com","active":"true","first_name":"Amsterdam
+        Court","last_name":"Guestfolio","address":"226 West 50th Street","address2":"","city":"New
+        York","state":"New York","zip":"N\/a","country":"Unite","phone":"212.459.1000","website":"http:\/\/www.amsterdamcourtnyc.com","website_access":"false"},{"username":"gf-anacortes-inn","email":"sendgridgf-+hotel.68@guestfolio.com","active":"true","first_name":"Anacortes
+        Inn","last_name":"Guestfolio","address":"3006 Commercial Ave","address2":"","city":"Anacortes","state":"Washington","zip":"N\/a","country":"Unite","phone":"N\/a","website":"http:\/\/","website_access":"false"},{"username":"gf-aria-resort-casino-las-vegas","email":"sendgridgf-+hotel.31@guestfolio.com","active":"true","first_name":"Aria
+        Resort & Casino Las Vegas","last_name":"Guestfolio","address":"3730 Las Vegas
+        Blvd","address2":"","city":"Las Vegas","state":"Nevada","zip":"N\/a","country":"Unite","phone":"866.359.7757","website":"http:\/\/www.arialasvegas.com","website_access":"false"},{"username":"gf-beach-club-resort","email":"sendgridgf-+hotel.93@guestfolio.com","active":"true","first_name":"Beach
+        Club Resort","last_name":"Guestfolio","address":"181 Beachside Drive","address2":"","city":"Parksville","state":"BC","zip":"N\/a","country":"Canad","phone":"1-888-760-2008","website":"http:\/\/www.beachclubbc.ca","website_access":"false"},{"username":"gf-berkeley-oceanfront-hotel","email":"sendgridgf-+hotel.52@guestfolio.com","active":"true","first_name":"Berkeley
+        Oceanfront Hotel","last_name":"Guestfolio","address":"1401 Ocean Avenue","address2":"","city":"Asbury
+        Park","state":"New Jersey","zip":"N\/a","country":"Unite","phone":"732-776-6700","website":"http:\/\/www.berkeleyhotelnj.com","website_access":"false"},{"username":"gf-biddle-hotel-and-conference-center","email":"sendgridgf-+hotel.14@guestfolio.com","active":"true","first_name":"Biddle
+        Hotel and Conference Center","last_name":"Guestfolio","address":"900 East
+        Seventh","address2":"","city":"Bloomington","state":"Indiana","zip":"N\/a","country":"Unite","phone":"812
+        856 6381","website":"http:\/\/imu.indiana.edu\/hotel\/","website_access":"false"},{"username":"gf-blake","email":"sendgridgf-+hotel.53@guestfolio.com","active":"true","first_name":"Blake","last_name":"Guestfolio","address":"555
+        South Mcdowell Street","address2":"","city":"Charlotte","state":"North Carolina","zip":"N\/a","country":"Unite","phone":"704-372-4100","website":"http:\/\/www.blakehotelnc.com","website_access":"false"},{"username":"gf-carleton-lodge","email":"sendgridgf-+hotel.56@guestfolio.com","active":"true","first_name":"Carleton
+        Lodge","last_name":"Guestfolio","address":"4290 Mountain Sq","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"604-932-2321","website":"http:\/\/www.carletonlodge.com","website_access":"false"},{"username":"gf-coast-blackcomb-suites","email":"sendgridgf-+hotel.39@guestfolio.com","active":"true","first_name":"Coast
+        Blackcomb Suites","last_name":"Guestfolio","address":"4899 Painted Cliff Road","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"1-800-716-6199  ","website":"http:\/\/www.coastblackcombsuites.com","website_access":"false"},{"username":"gf-corinthia-hotel-london","email":"sendgridgf-+hotel.54@guestfolio.com","active":"true","first_name":"Corinthia
+        Hotel London","last_name":"Guestfolio","address":"Whitehall Place London SW1A
+        2BD","address2":"","city":"London","state":"England","zip":"N\/a","country":"Unite","phone":"+44
+        (0) 20 7930 8181","website":"http:\/\/corinthia.com\/en\/London\/","website_access":"false"},{"username":"gf-cousin-s-country-inn","email":"sendgridgf-+hotel.11@guestfolio.com","active":"true","first_name":"Cousin''s
+        Country Inn","last_name":"Guestfolio","address":"2114 West 6th Street ","address2":"","city":"The
+        Dalles","state":"Oregon","zip":"N\/a","country":"Unite","phone":"541-298-5161","website":"http:\/\/www.cousinscountryinn.com","website_access":"false"},{"username":"gf-crystal-lodge-suites","email":"sendgridgf-+hotel.1@guestfolio.com","active":"true","first_name":"Crystal
+        Lodge & Suites","last_name":"Guestfolio","address":"4154 Village Green","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"1-800-667-3363","website":"http:\/\/www.crystal-lodge.com\/","website_access":"false"},{"username":"gf-dart-marina","email":"sendgridgf-+hotel.108@guestfolio.com","active":"true","first_name":"Dart
+        Marina","last_name":"Guestfolio","address":"Sandquay Road","address2":"","city":"Dartmouth","state":"England","zip":"N\/a","country":"Unite","phone":"+44
+        (0)1803 832580","website":"http:\/\/www.dartmarina.com","website_access":"false"},{"username":"gf-delete-this-one","email":"sendgridgf-+hotel.50@guestfolio.com","active":"true","first_name":"DELETE
+        THIS ONE","last_name":"Guestfolio","address":"791 West Georgia","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-932-2510","website":"http:\/\/www.guestfolio.com","website_access":"false"},{"username":"gf-dunton-hot-springs","email":"sendgridgf-+hotel.114@guestfolio.com","active":"true","first_name":"Dunton
+        Hot Springs","last_name":"Guestfolio","address":"52068 Road 38","address2":"","city":"Dolores","state":"Colorado","zip":"N\/a","country":"Unite","phone":"(970)
+        882-4800","website":"http:\/\/www.duntonhotsprings.com\/","website_access":"false"},{"username":"gf-edmonton-hotel-convention-centre","email":"sendgridgf-+hotel.155@guestfolio.com","active":"true","first_name":"Edmonton
+        Hotel & Convention Centre","last_name":"Guestfolio","address":"4520 76 Ave
+        NW","address2":"","city":"Edmonton","state":"AB","zip":"N\/a","country":"Canad","phone":"(780)
+        468-5400","website":"http:\/\/www.hiccedmonton.com","website_access":"false"},{"username":"gf-empire","email":"sendgridgf-+hotel.51@guestfolio.com","active":"true","first_name":"Empire","last_name":"Guestfolio","address":"44
+        West 63rd Street","address2":"","city":"New York","state":"New York","zip":"N\/a","country":"Unite","phone":"212-265-7400","website":"http:\/\/www.empirehotelnyc.com","website_access":"false"},{"username":"gf-fenix-inn-melaka","email":"sendgridgf-+hotel.82@guestfolio.com","active":"true","first_name":"Fenix
+        Inn Melaka","last_name":"Guestfolio","address":"156, Jalan Merdeka, Taman
+        Melaka Raya","address2":"","city":"Melaka","state":"Melaka","zip":"N\/a","country":"Malay","phone":"+606-281
+        5511","website":"http:\/\/www.fenixinn.com","website_access":"false"},{"username":"gf-four-seasons-demo-account","email":"sendgridgf-+hotel.30@guestfolio.com","active":"true","first_name":"Four
+        Seasons Demo Account","last_name":"Guestfolio","address":"791 West Georgia
+        Street  ","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"1
+        (604) 689-9333","website":"http:\/\/www.fourseasons.com\/vancouver","website_access":"false"},{"username":"gf-four-seasons-hotel-vancouver","email":"sendgridgf-+hotel.3@guestfolio.com","active":"true","first_name":"Four
+        Seasons Hotel Vancouver","last_name":"Guestfolio","address":"791 West Georgia
+        Street  ","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"1
+        (604) 689-9333","website":"http:\/\/www.fourseasons.com\/vancouver","website_access":"false"},{"username":"gf-four-seasons-resort-hualalai","email":"sendgridgf-+hotel.32@guestfolio.com","active":"true","first_name":"Four
+        Seasons Resort Hualalai","last_name":"Guestfolio","address":"72-100 Ka''upulehu
+        Drive","address2":"","city":"Kailua-Kona","state":"Hawaii","zip":"N\/a","country":"Unite","phone":"(808)
+        325-8000","website":"http:\/\/www.fourseasons.com\/hualalai\/accommodations\/","website_access":"false"},{"username":"gf-four-seasons-resort-lana-i-at-manele-bay","email":"sendgridgf-+hotel.19@guestfolio.com","active":"true","first_name":"Four
+        Seasons Resort Lana''i at Manele Bay","last_name":"Guestfolio","address":"One
+        Manele Bay Road","address2":"","city":"Lanai City","state":"Hawaii","zip":"N\/a","country":"Unite","phone":"1
+        (808) 565-2000","website":"http:\/\/www.fourseasons.com\/manelebay\/","website_access":"false"},{"username":"gf-four-seasons-resort-lana-i-the-lodge-at-koele","email":"sendgridgf-+hotel.18@guestfolio.com","active":"true","first_name":"Four
+        Seasons Resort Lana''i The Lodge at Koele","last_name":"Guestfolio","address":"One
+        Keomoku Highway","address2":"","city":"Lanai City","state":"Hawaii","zip":"N\/a","country":"Unite","phone":"1
+        (808) 565-4000","website":"http:\/\/www.fourseasons.com\/koele\/","website_access":"false"},{"username":"gf-four-seasons-resort-vail","email":"sendgridgf-+hotel.38@guestfolio.com","active":"true","first_name":"Four
+        Seasons Resort Vail","last_name":"Guestfolio","address":"One Vail Road","address2":"","city":"Vail","state":"Colorado","zip":"N\/a","country":"Unite","phone":"1
+        (970) 477-8600","website":"http:\/\/www.fourseasons.com\/vail\/","website_access":"false"},{"username":"gf-four-seasons-resort-whistler","email":"sendgridgf-+hotel.26@guestfolio.com","active":"true","first_name":"Four
+        Seasons Resort Whistler","last_name":"Guestfolio","address":"4591 Blackcomb
+        Way","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"1
+        (604) 935-3400","website":"http:\/\/www.fourseasons.com\/whistler\/","website_access":"false"},{"username":"gf-french-quarter-inn","email":"sendgridgf-+hotel.151@guestfolio.com","active":"true","first_name":"French
+        Quarter Inn","last_name":"Guestfolio","address":"166 Church Street","address2":"","city":"Charleston","state":"South
+        Carolina","zip":"N\/a","country":"Unite","phone":"1 (866) 812-1900","website":"http:\/\/www.fqicharleston.com","website_access":"false"},{"username":"gf-fusion-maia-da-nang","email":"sendgridgf-+hotel.65@guestfolio.com","active":"true","first_name":"Fusion
+        Maia Da Nang","last_name":"Guestfolio","address":"Tr\u01b0\u1eddng Sa","address2":"","city":"Da
+        Nang City","state":"","zip":"N\/a","country":"Vietn","phone":"+84 511 3967
+        999","website":"http:\/\/www.fusionmaiadanang.com\/","website_access":"false"},{"username":"gf-glenmore-inn-convention-centre","email":"sendgridgf-+hotel.13@guestfolio.com","active":"true","first_name":"Glenmore
+        Inn & Convention Centre","last_name":"Guestfolio","address":"2720 Glenmore
+        Trail SE","address2":"","city":"Calgary","state":"AB","zip":"N\/a","country":"Canad","phone":"1-800-661-3163","website":"http:\/\/www.glenmoreinn.com\/","website_access":"false"},{"username":"gf-haystack-lodgings","email":"sendgridgf-+hotel.101@guestfolio.com","active":"true","first_name":"Haystack
+        Lodgings","last_name":"Guestfolio","address":"487 S. Hemlock St.","address2":"","city":"Cannon
+        Beach","state":"Oregon","zip":"N\/a","country":"Unite","phone":"1-800-507-2714","website":"http:\/\/www.haystacklodgings.com\/","website_access":"false"},{"username":"gf-hotel-icona-diamond-beach","email":"sendgridgf-+hotel.59@guestfolio.com","active":"true","first_name":"Hotel
+        Icona Diamond Beach","last_name":"Guestfolio","address":"9701 Atlantic Ave","address2":"","city":"Diamond
+        Beach","state":"New Jersey","zip":"N\/a","country":"Unite","phone":"6097296600","website":"http:\/\/hotelicona.com","website_access":"false"},{"username":"gf-hotel-london","email":"sendgridgf-+hotel.48@guestfolio.com","active":"true","first_name":"Hotel
+        London","last_name":"Guestfolio","address":"Trafalgar Square","address2":"","city":"London","state":"England","zip":"N\/a","country":"Unite","phone":"N\/a","website":"http:\/\/www.guestfolio.com","website_access":"false"},{"username":"gf-hotel-perfect","email":"mark+sendgrid@guestfolio.com","active":"true","first_name":"Hotel
+        Perfect","last_name":"Guestfolio","address":"791 West Georgia","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-932-2510","website":"http:\/\/www.guestfolio.com","website_access":"false"},{"username":"gf-hotel-perfect-dashboard-sample","email":"sendgridgf-+hotel.28@guestfolio.com","active":"true","first_name":"Hotel
+        Perfect Dashboard Sample","last_name":"Guestfolio","address":"791 West Georgia","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-932-2510","website":"http:\/\/www.guestfolio.com","website_access":"false"},{"username":"gf-hotel-perfect-tutorial","email":"sendgridgf-+hotel.41@guestfolio.com","active":"true","first_name":"Hotel
+        Perfect Tutorial","last_name":"Guestfolio","address":"791 West Georgia","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-932-2510","website":"http:\/\/www.guestfolio.com","website_access":"false"},{"username":"gf-ihotel-67-street","email":"sendgridgf-+hotel.157@guestfolio.com","active":"true","first_name":"iHOTEL
+        67 Street","last_name":"Guestfolio","address":"6500 67 Street","address2":"","city":"Edmonton","state":"AB","zip":"N\/a","country":"Canad","phone":"1-403-342-6567","website":"http:\/\/www.hi67.com","website_access":"false"},{"username":"gf-inn-at-cannon-beach","email":"sendgridgf-+hotel.12@guestfolio.com","active":"true","first_name":"Inn
+        at Cannon Beach","last_name":"Guestfolio","address":"3215 South Hemlock","address2":"","city":"Cannon
+        Beach","state":"Oregon","zip":"N\/a","country":"Unite","phone":"800-321-6304","website":"http:\/\/www.innatcannonbeach.com","website_access":"false"},{"username":"gf-inn-at-the-prom","email":"sendgridgf-+hotel.102@guestfolio.com","active":"true","first_name":"Inn
+        at the Prom","last_name":"Guestfolio","address":"341 S. Prom","address2":"","city":"Seaside","state":"Oregon","zip":"N\/a","country":"Unite","phone":"(503)
+        738-4142","website":"http:\/\/innatprom.com","website_access":"false"},{"username":"gf-iroquois-new-york","email":"sendgridgf-+hotel.99@guestfolio.com","active":"true","first_name":"Iroquois
+        New York","last_name":"Guestfolio","address":"49 West 44th Street ","address2":"","city":"New
+        York","state":"New York","zip":"N\/a","country":"Unite","phone":"212.840.3080","website":"http:\/\/www.iroquoisny.com\/","website_access":"false"},{"username":"gf-kalon-surf","email":"sendgridgf-+hotel.33@guestfolio.com","active":"true","first_name":"Kalon
+        Surf","last_name":"Guestfolio","address":"34","address2":"","city":"Dominical","state":"Provincia
+        de Puntarenas","zip":"N\/a","country":"Costa","phone":"1 646 25 72 107 ","website":"http:\/\/kalonsurf.com","website_access":"false"},{"username":"gf-la-avenida-inn","email":"sendgridgf-+hotel.66@guestfolio.com","active":"true","first_name":"La
+        Avenida Inn","last_name":"Guestfolio","address":"1315 Orange Avenue","address2":"","city":"Coronado","state":"California","zip":"N\/a","country":"Unite","phone":"619-435-3191","website":"http:\/\/www.laavenidainn.com","website_access":"false"},{"username":"gf-lakeview-hecla-resort","email":"sendgridgf-+hotel.123@guestfolio.com","active":"true","first_name":"Lakeview
+        Hecla Resort","last_name":"Guestfolio","address":"Highway 8 - Hecla Island","address2":"","city":"Hecla","state":"MB","zip":"N\/a","country":"Canad","phone":"204.279.2041","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-bathurst","email":"sendgridgf-+hotel.94@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Bathurst","last_name":"Guestfolio","address":"777 St. Peter Avenue","address2":"","city":"Bathurst","state":"NB","zip":"N\/a","country":"Canad","phone":"506.548.4949","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-brandon","email":"sendgridgf-+hotel.115@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Brandon","last_name":"Guestfolio","address":"1880 18th Street
+        North","address2":"","city":"Brandon","state":"MB","zip":"N\/a","country":"Canad","phone":"204.728.1880","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-brooks","email":"sendgridgf-+hotel.134@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Brooks","last_name":"Guestfolio","address":"1307 2nd Street West","address2":"","city":"Brooks","state":"AB","zip":"N\/a","country":"Canad","phone":"403.362.7440","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-chetwynd","email":"sendgridgf-+hotel.116@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Chetwynd","last_name":"Guestfolio","address":"4820 North Access
+        Road","address2":"","city":"Chetwynd","state":"BC","zip":"N\/a","country":"Canad","phone":"250.788.3000","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-drayton-valley","email":"sendgridgf-+hotel.117@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Drayton Valley","last_name":"Guestfolio","address":"4302 50th
+        Street","address2":"","city":"Drayton Valley","state":"AB","zip":"N\/a","country":"Canad","phone":"780.542.3200","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-edson-airport-west","email":"sendgridgf-+hotel.136@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Edson Airport West","last_name":"Guestfolio","address":"528 63rd
+        Street","address2":"","city":"Edson","state":"AB","zip":"N\/a","country":"Canad","phone":"780.723.7508","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-edson-east","email":"sendgridgf-+hotel.135@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Edson East","last_name":"Guestfolio","address":"4300 2nd Avenue","address2":"","city":"Edson","state":"AB","zip":"N\/a","country":"Canad","phone":"780.723.2500","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-fort-nelson","email":"sendgridgf-+hotel.142@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Fort Nelson","last_name":"Guestfolio","address":"4507 50th Avenue
+        South","address2":"","city":"Fort Nelson","state":"BC","zip":"N\/a","country":"Canad","phone":"250.233.5001","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-fort-saskatchewan","email":"sendgridgf-+hotel.137@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Fort Saskatchewan","last_name":"Guestfolio","address":"10115
+        88 Avenue","address2":"","city":"Fort Saskatchewan","state":"AB","zip":"N\/a","country":"Canad","phone":"780.998.7888","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-fort-st-john","email":"sendgridgf-+hotel.118@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Fort St. John","last_name":"Guestfolio","address":"10103 98 Avenue","address2":"","city":"Fort
+        St. John","state":"BC","zip":"N\/a","country":"Canad","phone":"250.787.0779","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-fredericton","email":"sendgridgf-+hotel.96@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Fredericton","last_name":"Guestfolio","address":"665 Prospect
+        Street","address2":"","city":"Fredericton","state":"NB","zip":"N\/a","country":"Canad","phone":"506.459.0035","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-grand-forks","email":"sendgridgf-+hotel.119@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Grand Forks","last_name":"Guestfolio","address":"3350 32nd Ave
+        S","address2":"","city":"Grand Forks","state":"North Dakota","zip":"N\/a","country":"Unite","phone":"701.775.5000","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-hinton","email":"sendgridgf-+hotel.120@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Hinton","last_name":"Guestfolio","address":"500 Smith Street","address2":"","city":"Hinton","state":"AB","zip":"N\/a","country":"Canad","phone":"780.865.2575","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-miramichi","email":"sendgridgf-+hotel.97@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Miramichi","last_name":"Guestfolio","address":"333 King George
+        Highway","address2":"","city":"Miramichi","state":"NB","zip":"N\/a","country":"Canad","phone":"506.627.1999","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-okotoks","email":"sendgridgf-+hotel.121@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Okotoks","last_name":"Guestfolio","address":"22 Southridge Drive","address2":"","city":"Okotoks","state":"AB","zip":"N\/a","country":"Canad","phone":"403.938.7400","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-slave-lake","email":"sendgridgf-+hotel.138@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Slave Lake","last_name":"Guestfolio","address":"1550 Holmes Trail
+        SE","address2":"","city":"Slave Lake","state":"AB","zip":"N\/a","country":"Canad","phone":"780.849.9500","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-thompson","email":"sendgridgf-+hotel.122@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Thompson","last_name":"Guestfolio","address":"70 Thompson Drive
+        North","address2":"","city":"Thompson","state":"MB","zip":"N\/a","country":"Canad","phone":"204.778.8879","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-inn-suites-whitecourt","email":"sendgridgf-+hotel.141@guestfolio.com","active":"true","first_name":"Lakeview
+        Inn & Suites Whitecourt","last_name":"Guestfolio","address":"3325 Caxton Street","address2":"","city":"Whitecourt","state":"AB","zip":"N\/a","country":"Canad","phone":"780.706.3349","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-lakeview-signature-inn-calgary-airport","email":"sendgridgf-+hotel.95@guestfolio.com","active":"true","first_name":"Lakeview
+        Signature Inn Calgary Airport","last_name":"Guestfolio","address":"2622 39th
+        Avenue NE","address2":"","city":"Calgary","state":"AB","zip":"N\/a","country":"Canad","phone":"403.735.3336","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-las-clementinas","email":"sendgridgf-+hotel.27@guestfolio.com","active":"true","first_name":"Las
+        Clementinas","last_name":"Guestfolio","address":"Calle 11 Este","address2":"","city":"Panam\u00e1","state":"Provincia
+        de Panama","zip":"N\/a","country":"Panam","phone":"(507) 228-7613","website":"http:\/\/lasclementinas.com","website_access":"false"},{"username":"gf-lifehouse-spa-hotel","email":"sendgridgf-+hotel.46@guestfolio.com","active":"true","first_name":"Lifehouse
+        Spa & Hotel","last_name":"Guestfolio","address":"Frinton Road","address2":"","city":"Thorpe-le-Soken","state":"England","zip":"N\/a","country":"Unite","phone":"+44
+        (0) 1255 860050","website":"http:\/\/www.lifehouse.co.uk","website_access":"false"},{"username":"gf-lighthouse-inn","email":"sendgridgf-+hotel.91@guestfolio.com","active":"true","first_name":"Lighthouse
+        Inn","last_name":"Guestfolio","address":"763 South Hemlock","address2":"","city":"Cannon
+        Beach","state":"Oregon","zip":"N\/a","country":"Unite","phone":"866-265-1686","website":"http:\/\/www.cblighthouseinn.com","website_access":"false"},{"username":"gf-lodges-at-cannon-beach","email":"sendgridgf-+hotel.92@guestfolio.com","active":"true","first_name":"Lodges
+        at Cannon Beach","last_name":"Guestfolio","address":"132 E Surfcrest Ave","address2":"","city":"Cannon
+        Beach","state":"Oregon","zip":"N\/a","country":"Unite","phone":"(877) 261-9184","website":"http:\/\/www.lodgesatcannonbeach.com\/","website_access":"false"},{"username":"gf-loyalist-lakeview-resort-summerside","email":"sendgridgf-+hotel.98@guestfolio.com","active":"true","first_name":"Loyalist
+        Lakeview Resort Summerside","last_name":"Guestfolio","address":"195 Harbour
+        Drive","address2":"","city":"Summerside","state":"PE","zip":"N\/a","country":"Canad","phone":"902.436.3333","website":"http:\/\/www.lakeviewhotels.com","website_access":"false"},{"username":"gf-manteo-resort-waterfront-hotel-villas","email":"sendgridgf-+hotel.129@guestfolio.com","active":"true","first_name":"Manteo
+        Resort Waterfront Hotel & Villas","last_name":"Guestfolio","address":"3762
+        Lakeshore Road","address2":"","city":"Kelowna","state":"BC","zip":"N\/a","country":"Canad","phone":"(250)
+        860-1031","website":"http:\/\/www.manteo.com\/","website_access":"false"},{"username":"gf-marcel-at-gramercy","email":"sendgridgf-+hotel.45@guestfolio.com","active":"true","first_name":"Marcel
+        at Gramercy","last_name":"Guestfolio","address":"201 East 24th Street","address2":"","city":"New
+        York","state":"New York","zip":"N\/a","country":"Unite","phone":"212-696-3800","website":"http:\/\/www.themarcelatgramercy.com","website_access":"false"},{"username":"gf-marina-hotel-corinthia-beach-resort","email":"sendgridgf-+hotel.57@guestfolio.com","active":"true","first_name":"Marina
+        Hotel, Corinthia Beach Resort","last_name":"Guestfolio","address":"Marina
+        Hotel, St. George''s Bay","address2":"","city":"St. Julians","state":"","zip":"N\/a","country":"Malta","phone":"+356
+        2370 2000","website":"http:\/\/www.marinahotel.com.mt","website_access":"false"},{"username":"gf-moderne-hotel","email":"sendgridgf-+hotel.40@guestfolio.com","active":"true","first_name":"Moderne
+        Hotel","last_name":"Guestfolio","address":"243 West 55th Street","address2":"","city":"New
+        York","state":"New York","zip":"N\/a","country":"Unite","phone":"212-397-6767","website":"http:\/\/www.modernehotelnyc.com","website_access":"false"},{"username":"gf-nita-lake-lodge","email":"sendgridgf-+hotel.35@guestfolio.com","active":"true","first_name":"Nita
+        Lake Lodge","last_name":"Guestfolio","address":"2131 Lake Placid Road","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"1-888-755-6482","website":"http:\/\/www.nitalakelodge.com\/","website_access":"false"},{"username":"gf-north-charleston-inn","email":"sendgridgf-+hotel.132@guestfolio.com","active":"true","first_name":"North
+        Charleston Inn ","last_name":"Guestfolio","address":"2934 W. Montague Ave","address2":"","city":"Charleston","state":"South
+        Carolina","zip":"N\/a","country":"Unite","phone":"843-744-8281","website":"http:\/\/www.northcharlestoninn.com","website_access":"false"},{"username":"gf-opus-vancouver","email":"sendgridgf-+hotel.100@guestfolio.com","active":"true","first_name":"OPUS
+        Vancouver","last_name":"Guestfolio","address":"322 Davie Street","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"1-866-642-6787","website":"http:\/\/opushotel.com","website_access":"false"},{"username":"gf-pan-pacific-whistler-mountainside","email":"sendgridgf-+hotel.62@guestfolio.com","active":"true","first_name":"Pan
+        Pacific Whistler Mountainside","last_name":"Guestfolio","address":"4320 Sundial
+        Crescent","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"604-905-2999","website":"http:\/\/www2.panpacific.com\/en\/WhistlerMountainside\/Overview.html","website_access":"false"},{"username":"gf-pan-pacific-whistler-village-centre","email":"sendgridgf-+hotel.86@guestfolio.com","active":"true","first_name":"Pan
+        Pacific Whistler Village Centre","last_name":"Guestfolio","address":"4299
+        Blackcomb Way","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"604-966-5500","website":"http:\/\/www2.panpacific.com\/en\/WhistlerVillageCentre\/Overview.html","website_access":"false"},{"username":"gf-rimrock-resort-hotel","email":"sendgridgf-+hotel.15@guestfolio.com","active":"true","first_name":"Rimrock
+        Resort Hotel","last_name":"Guestfolio","address":"300 Mountain Avenue","address2":"","city":"Banff","state":"AB","zip":"N\/a","country":"Canad","phone":"(403)
+        762-3356","website":"http:\/\/www.rimrockresort.com\/","website_access":"false"},{"username":"gf-rsi-hotel-perfect","email":"sendgridgf-+hotel.58@guestfolio.com","active":"true","first_name":"RSI
+        Hotel Perfect","last_name":"Guestfolio","address":"791 West Georgia","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-932-2510","website":"http:\/\/www.roomkeypms.com","website_access":"false"},{"username":"gf-sandman-hotel-vancouver-city-centre","email":"sendgridgf-+hotel.55@guestfolio.com","active":"true","first_name":"Sandman
+        Hotel Vancouver City Centre","last_name":"Guestfolio","address":"180 W Georgia
+        St","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604
+        681 2211","website":"http:\/\/","website_access":"false"},{"username":"gf-stafford-s-bay-view-inn","email":"sendgridgf-+hotel.5@guestfolio.com","active":"true","first_name":"Stafford''s
+        Bay View Inn","last_name":"Guestfolio","address":"2011 Woodland Avenue","address2":"","city":"Bay
+        View","state":"Michigan","zip":"N\/a","country":"Unite","phone":"231-347-2771","website":"http:\/\/www.staffords.com\/bayview","website_access":"false"},{"username":"gf-stafford-s-crooked-river-lodge-suites","email":"sendgridgf-+hotel.6@guestfolio.com","active":"true","first_name":"Stafford''s
+        Crooked River Lodge & Suites","last_name":"Guestfolio","address":"6845 US
+        31 N","address2":"","city":"Alanson","state":"Michigan","zip":"N\/a","country":"Unite","phone":"231-548-5000","website":"http:\/\/www.staffords.com\/crookedriverlodge","website_access":"false"},{"username":"gf-stafford-s-perry-hotel","email":"sendgridgf-+hotel.7@guestfolio.com","active":"true","first_name":"Stafford''s
+        Perry Hotel","last_name":"Guestfolio","address":"118 Lewis Street","address2":"","city":"Petoskey","state":"Michigan","zip":"N\/a","country":"Unite","phone":"231-347-4000","website":"http:\/\/www.staffords.com\/perryhotel","website_access":"false"},{"username":"gf-stallingborough-grange-hotel","email":"sendgridgf-+hotel.49@guestfolio.com","active":"true","first_name":"Stallingborough
+        Grange Hotel","last_name":"Guestfolio","address":"Riby Road","address2":"","city":"Grimsby","state":"England","zip":"N\/a","country":"Unite","phone":"+44
+        (0)1469 561302","website":"http:\/\/www.stallingboroughgrange.com","website_access":"false"},{"username":"gf-stonehurst-manor","email":"sendgridgf-+hotel.60@guestfolio.com","active":"true","first_name":"Stonehurst
+        Manor","last_name":"Guestfolio","address":"3351 White Mountain Highway","address2":"","city":"North
+        Conway","state":"New Hampshire","zip":"N\/a","country":"Unite","phone":"800-525-9100","website":"http:\/\/www.stonehurstmanor.com","website_access":"false"},{"username":"gf-stratford-inn","email":"sendgridgf-+hotel.69@guestfolio.com","active":"true","first_name":"Stratford
+        Inn","last_name":"Guestfolio","address":"555 Siskiyou Blvd #1","address2":"","city":"Ashland","state":"Oregon","zip":"N\/a","country":"Unite","phone":"541-488-2151","website":"http:\/\/stratfordinnashland.com","website_access":"false"},{"username":"gf-summerland-waterfront-resort-hotel-spa","email":"sendgridgf-+hotel.109@guestfolio.com","active":"true","first_name":"Summerland
+        Waterfront Resort Hotel & Spa","last_name":"Guestfolio","address":"13011 Lakeshore
+        Drive South","address2":"","city":"Summerland","state":"BC","zip":"N\/a","country":"Canad","phone":"250-494-8180","website":"http:\/\/www.summerlandresorthotel.com","website_access":"false"},{"username":"gf-sundial-boutique-hotel","email":"sendgridgf-+hotel.29@guestfolio.com","active":"true","first_name":"Sundial
+        Boutique Hotel","last_name":"Guestfolio","address":"4340 Sundial Crescent","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"1-800-661-2321","website":"http:\/\/www.sundialhotel.com","website_access":"false"},{"username":"gf-surfside-beach-resort","email":"sendgridgf-+hotel.133@guestfolio.com","active":"true","first_name":"Surfside
+        Beach Resort","last_name":"Guestfolio","address":"15 S. Ocean Blvd","address2":"","city":"Surfside
+        Beach","state":"South Carolina","zip":"N\/a","country":"Unite","phone":"843-238-4444
+        ","website":"http:\/\/www.surfsidebeachresort.com","website_access":"false"},{"username":"gf-the-bentley-hotel","email":"sendgridgf-+hotel.36@guestfolio.com","active":"true","first_name":"The
+        Bentley Hotel","last_name":"Guestfolio","address":"500 East 62nd","address2":"","city":"New
+        York","state":"New York","zip":"N\/a","country":"Unite","phone":"212.644.6000","website":"http:\/\/www.bentleyhotelnyc.com\/","website_access":"false"},{"username":"gf-the-gore-hotel","email":"sendgridgf-+hotel.8@guestfolio.com","active":"true","first_name":"The
+        Gore Hotel","last_name":"Guestfolio","address":"190 Queen''s Gate","address2":"","city":"London","state":"England","zip":"N\/a","country":"Unite","phone":"44
+        (0) 207 584 6601","website":"http:\/\/www.gorehotel.com\/","website_access":"false"},{"username":"gf-the-listel-hotel-whistler","email":"sendgridgf-+hotel.37@guestfolio.com","active":"true","first_name":"The
+        Listel Hotel Whistler","last_name":"Guestfolio","address":"4121 Village Green","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"800
+        663 5472","website":"http:\/\/www.listelhotel.com\/","website_access":"false"},{"username":"gf-the-lodge-hotel","email":"sendgridgf-+hotel.87@guestfolio.com","active":"true","first_name":"The
+        Lodge Hotel","last_name":"Guestfolio","address":"52-54 Upper Richmond Road","address2":"","city":"London","state":"England","zip":"N\/a","country":"Unite","phone":"+44
+        (0) 208 874 1598","website":"http:\/\/www.thelodgehotellondon.com","website_access":"false"},{"username":"gf-the-ocean-lodge","email":"sendgridgf-+hotel.10@guestfolio.com","active":"true","first_name":"The
+        Ocean Lodge","last_name":"Guestfolio","address":"2864 South Pacific Street","address2":"","city":"Cannon
+        Beach","state":"Oregon","zip":"N\/a","country":"Unite","phone":"888-777-4047","website":"http:\/\/www.theoceanlodge.com\/","website_access":"false"},{"username":"gf-the-old-rectory-hotel","email":"sendgridgf-+hotel.79@guestfolio.com","active":"true","first_name":"The
+        Old Rectory Hotel","last_name":"Guestfolio","address":"Martinhoe, Exmoor National
+        Park","address2":"","city":"Martinhoe","state":"England","zip":"N\/a","country":"Unite","phone":"+44
+        (0) 1598 763 368","website":"http:\/\/www.oldrectoryhotel.co.uk\/","website_access":"false"},{"username":"gf-the-pelham-hotel","email":"sendgridgf-+hotel.9@guestfolio.com","active":"true","first_name":"The
+        Pelham Hotel","last_name":"Guestfolio","address":"15 Cromwell Place","address2":"","city":"London","state":"England","zip":"N\/a","country":"Unite","phone":"44
+        (0) 207 589 8288","website":"http:\/\/www.pelhamhotel.co.uk","website_access":"false"},{"username":"gf-the-sanctuary-house-hotel","email":"sendgridgf-+hotel.143@guestfolio.com","active":"true","first_name":"The
+        Sanctuary House Hotel","last_name":"Guestfolio","address":"33 Tothill Street","address2":"","city":"London","state":"England","zip":"N\/a","country":"Unite","phone":"020
+        7799 4044","website":"http:\/\/www.fullers.co.uk","website_access":"false"},{"username":"gf-the-springs-resort-spa","email":"sendgridgf-+hotel.63@guestfolio.com","active":"true","first_name":"The
+        Springs Resort & Spa","last_name":"Guestfolio","address":"165 Hot Springs
+        Boulevard","address2":"","city":"Pagosa Springs","state":"Colorado","zip":"N\/a","country":"Unite","phone":"(970)
+        264-4168","website":"http:\/\/pagosahotsprings.com","website_access":"false"},{"username":"gf-turtle-bay-resort","email":"sendgridgf-+hotel.107@guestfolio.com","active":"true","first_name":"Turtle
+        Bay Resort","last_name":"Guestfolio","address":"57-091 Kamehameha Highway","address2":"","city":"Kahuku","state":"Hawaii","zip":"N\/a","country":"Unite","phone":"808-293-6000","website":"http:\/\/www.turtlebayresort.com","website_access":"false"},{"username":"gf-whistler-blackcomb","email":"sendgridgf-+hotel.146@guestfolio.com","active":"true","first_name":"Whistler
+        Blackcomb","last_name":"Guestfolio","address":"4545 Blackcomb Way","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"1.888.403.4727","website":"http:\/\/www.whistlerblackcomb.com","website_access":"false"},{"username":"gf-whistler-demo-account","email":"sendgridgf-+hotel.131@guestfolio.com","active":"true","first_name":"Whistler
+        Demo Account","last_name":"Guestfolio","address":"4545 Blackcomb Way","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"1.888.403.4727","website":"http:\/\/www.whistlerblackcomb.com","website_access":"false"},{"username":"gf-zona-hotel-suites","email":"sendgridgf-+hotel.64@guestfolio.com","active":"true","first_name":"Zona
+        Hotel & Suites","last_name":"Guestfolio","address":"7677 E Princess Blvd","address2":"","city":"Scottsdale","state":"Arizona","zip":"N\/a","country":"Unite","phone":"1-888-222-1059","website":"http:\/\/zonascottsdale.com\/","website_access":"false"},{"username":"gf-hearthstone-lodge","email":"sendgridgf-+hotel.110@guestfolio.com","active":"true","first_name":"Hearthstone
+        Lodge","last_name":"Guestfolio","address":"3170 Creekside Way","address2":"","city":"Sun
+        Peaks","state":"BC","zip":"N\/a","country":"Canad","phone":"250-578-8588","website":"http:\/\/www.hearthstoneresort.com","website_access":"false"},{"username":"gf-black-rock-oceanfront-resort","email":"sendgridgf-+hotel.161@guestfolio.com","active":"true","first_name":"Black
+        Rock Oceanfront Resort","last_name":"Guestfolio","address":"596 Marine Drive","address2":"","city":"Ucluelet","state":"BC","zip":"N\/a","country":"Canad","phone":"1
+        (877) 762-5011","website":"http:\/\/www.blackrockresort.com","website_access":"false"},{"username":"gf-the-tombstone-grand-hotel","email":"sendgridgf-+hotel.147@guestfolio.com","active":"true","first_name":"The
+        Tombstone Grand Hotel","last_name":"Guestfolio","address":"580 West Randolph
+        Way","address2":"","city":"Tombstone","state":"Arizona","zip":"N\/a","country":"Unite","phone":"520-457-9507","website":"http:\/\/www.tombstonegrand.com","website_access":"false"},{"username":"gf-harbourview-inn","email":"sendgridgf-+hotel.160@guestfolio.com","active":"true","first_name":"HarbourView
+        Inn","last_name":"Guestfolio","address":"2 Vendue Range","address2":"","city":"Charleston","state":"South
+        Carolina","zip":"N\/a","country":"Unite","phone":"(843) 853-8439","website":"http:\/\/harbourviewcharleston.com","website_access":"false"},{"username":"gf-cosmopolitan-hotel-tribeca","email":"sendgridgf-+hotel.153@guestfolio.com","active":"true","first_name":"Cosmopolitan
+        Hotel Tribeca","last_name":"Guestfolio","address":"95 WEST BROADWAY","address2":"","city":"New
+        York","state":"New York","zip":"N\/a","country":"Unite","phone":"1 (888) 895-9400","website":"http:\/\/www.cosmohotel.com","website_access":"false"},{"username":"gf-land-s-end-resort","email":"sendgridgf-+hotel.162@guestfolio.com","active":"true","first_name":"Land''s
+        End Resort","last_name":"Guestfolio","address":"4786 Homer Spit Road","address2":"","city":"Homer","state":"Alaska","zip":"N\/a","country":"Unite","phone":"1-800-478-0400","website":"http:\/\/www.lands-end-resort.com","website_access":"false"},{"username":"gf-magnolia-hotel-spa","email":"sendgridgf-+hotel.113@guestfolio.com","active":"true","first_name":"Magnolia
+        Hotel & Spa","last_name":"Guestfolio","address":"623 Courtney Street","address2":"","city":"Victoria","state":"BC","zip":"N\/a","country":"Canad","phone":"(250)
+        381-0999","website":"http:\/\/magnoliahotel.com","website_access":"false"},{"username":"gf-x","email":"sendgridgf-+hotel.170@guestfolio.com","active":"true","first_name":"X","last_name":"Guestfolio","address":"Gross
+        Rd","address2":"","city":"Maryvale","state":"QL","zip":"N\/a","country":"Austr","phone":"N\/a","website":"http:\/\/","website_access":"false"},{"username":"gf-spicers-tamarind-retreat","email":"sendgridgf-+hotel.169@guestfolio.com","active":"true","first_name":"Spicers
+        Tamarind Retreat","last_name":"Guestfolio","address":"88 Obi Lane South","address2":"","city":"Maleny","state":"QL","zip":"N\/a","country":"Austr","phone":"07
+        5420 5420","website":"http:\/\/www.spicersgroup.com.au\/tamarind","website_access":"false"},{"username":"gf-hotel-impala","email":"sendgridgf-+hotel.154@guestfolio.com","active":"true","first_name":"Hotel
+        Impala","last_name":"Guestfolio","address":"1228 Collins Avenue","address2":"","city":"Miami
+        Beach","state":"Florida","zip":"N\/a","country":"Unite","phone":"(305) 673-2021","website":"http:\/\/www.impala-miami.com\/","website_access":"false"},{"username":"gf-eccleston-square-hotel","email":"sendgridgf-+hotel.159@guestfolio.com","active":"true","first_name":"Eccleston
+        Square Hotel","last_name":"Guestfolio","address":"37 Eccleston Square","address2":"","city":"London","state":"England","zip":"N\/a","country":"Unite","phone":"44
+        (0)20 3489 1000","website":"http:\/\/www.ecclestonsquarehotel.com","website_access":"false"},{"username":"gf-sunset-inn-suites","email":"sendgridgf-+hotel.130@guestfolio.com","active":"true","first_name":"Sunset
+        Inn & Suites","last_name":"Guestfolio","address":"1111 Burnaby St","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604.688.2474","website":"http:\/\/www.sunsetinn.com","website_access":"false"},{"username":"gf-coliseum-inn","email":"sendgridgf-+hotel.168@guestfolio.com","active":"true","first_name":"Coliseum
+        Inn","last_name":"Guestfolio","address":"11845 Wayne Gretzky Drive Southbound","address2":"","city":"Edmonton","state":"AB","zip":"N\/a","country":"Canad","phone":"780.471.1231","website":"http:\/\/www.coliseuminn.ca","website_access":"false"},{"username":"gf-century-plaza-hotel-spa","email":"sendgridgf-+hotel.140@guestfolio.com","active":"true","first_name":"Century
+        Plaza Hotel & Spa","last_name":"Guestfolio","address":"1015 Burrard Street","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-687-0575","website":"http:\/\/www.century-plaza.com\/","website_access":"false"},{"username":"gf-inn-at-the-quay-hotel","email":"gf-sendgrid+hotel.83@guestfolio.com","active":"true","first_name":"Inn
+        at the Quay Hotel","last_name":"Guestfolio","address":"900 Quayside Drive","address2":"","city":"New
+        Westminster","state":"BC","zip":"N\/a","country":"Canad","phone":" 604-520-1776","website":"http:\/\/www.innatthequay.com","website_access":"false"},{"username":"gf-goodwood-hotel","email":"gf-sendgrid+hotel.128@guestfolio.com","active":"true","first_name":"Goodwood
+        Hotel","last_name":"Guestfolio","address":"10 Copers Cope Rd","address2":"","city":"Chichester","state":"England","zip":"N\/a","country":"Unite","phone":"01243
+        775537","website":"http:\/\/www.goodwood.com","website_access":"false"},{"username":"gf-guestfolio-testing","email":"gf-sendgrid+hotel.174@guestfolio.com","active":"true","first_name":"Guestfolio
+        TESTING","last_name":"Guestfolio","address":"1200 alpha lake road","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"(604)
+        905-5135","website":"http:\/\/","website_access":"false"},{"username":"gf-elliott-house-inn","email":"gf-sendgrid+hotel.175@guestfolio.com","active":"true","first_name":"Elliott
+        House Inn","last_name":"Guestfolio","address":"78 Queen Street","address2":"","city":"Charleston","state":"South
+        Carolina","zip":"N\/a","country":"Unite","phone":"(877) 727-0369 ","website":"http:\/\/www.elliotthouseinn.com","website_access":"false"},{"username":"gf-hotel-belleclaire","email":"gf-sendgrid+hotel.156@guestfolio.com","active":"true","first_name":"Hotel
+        Belleclaire","last_name":"Guestfolio","address":"250 West 77th Street","address2":"","city":"New
+        York","state":"New York","zip":"N\/a","country":"Unite","phone":"(212) 362-7700","website":"http:\/\/www.hotelbelleclaire.com","website_access":"false"},{"username":"gf-shangri-la-hotel-vancouver","email":"gf-sendgrid+hotel.112@guestfolio.com","active":"true","first_name":"Shangri-La
+        Hotel Vancouver","last_name":"Guestfolio","address":"1128 West Georgia Street","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"(604)
+        689-1120","website":"http:\/\/www.shangri-la.com\/vancouver\/shangrila\/","website_access":"true"},{"username":"gf-shangri-la-hotel-toronto","email":"gf-sendgrid+hotel.111@guestfolio.com","active":"true","first_name":"Shangri-La
+        Hotel Toronto","last_name":"Guestfolio","address":"188 University Avenue","address2":"","city":"Toronto","state":"ON","zip":"N\/a","country":"Canad","phone":"(647)
+        788 8888","website":"http:\/\/www.shangri-la.com\/toronto\/shangrila\/","website_access":"false"},{"username":"gf-the-parkside-hotel-spa","email":"support@guestfolio.com","active":"true","first_name":"The
+        Parkside Hotel & Spa","last_name":"Guestfolio","address":"810 HUMBOLDT STREET","address2":"","city":"Victoria","state":"BC","zip":"N\/a","country":"Canad","phone":"250.940.1200","website":"http:\/\/www.parksidevictoria.com","website_access":"false"},{"username":"gf-executive-suites-hotel-resort-squamish","email":"support@guestfolio.com","active":"true","first_name":"Executive
+        Suites Hotel & Resort, Squamish","last_name":"Guestfolio","address":"40900
+        Tantalus Road","address2":"","city":"Squamish","state":"BC","zip":"N\/a","country":"Canad","phone":"604-815-0048","website":"http:\/\/www.executivesuitessquamish.com","website_access":"false"},{"username":"gf-alila-villas-goa","email":"support@guestfolio.com","active":"true","first_name":"Alila
+        Villas Goa","last_name":"Guestfolio","address":"Village Majorda","address2":"","city":"Goa","state":"Goa","zip":"N\/a","country":"India","phone":"N\/a","website":"http:\/\/","website_access":"false"},{"username":"gf-alveston-house-hotel","email":"support@guestfolio.com","active":"true","first_name":"Alveston
+        House Hotel","last_name":"Guestfolio","address":"David''s Lane","address2":"","city":"Alveston","state":"England","zip":"N\/a","country":"Unite","phone":"01454
+        415050","website":"http:\/\/www.alvestonhousehotel.co.uk\/","website_access":"false"},{"username":"gf-ampersand-hotel","email":"support@guestfolio.com","active":"true","first_name":"Ampersand
+        Hotel","last_name":"Guestfolio","address":"10 Harrington Road","address2":"","city":"London","state":"England","zip":"N\/a","country":"Unite","phone":"44
+        020 7589 5895","website":"http:\/\/www.ampersandhotel.com","website_access":"false"},{"username":"gf-aston-sheffield","email":"support@guestfolio.com","active":"true","first_name":"Aston
+        Sheffield","last_name":"Guestfolio","address":"Britannia Way, Catcliffe","address2":"","city":"Sheffield","state":"England","zip":"N\/a","country":"Unite","phone":"0114
+        261 5690","website":"http:\/\/www.astonhotels.co.uk\/sheffield","website_access":"false"},{"username":"gf-spicers-canopy","email":"support@guestfolio.com","active":"true","first_name":"Spicers
+        Canopy","last_name":"Guestfolio","address":"1095 South Branch Road","address2":"","city":"Maryvale","state":"QL","zip":"N\/a","country":"Austr","phone":"N\/a","website":"http:\/\/","website_access":"false"},{"username":"gf-georgian-court-hotel","email":"support@guestfolio.com","active":"true","first_name":"Georgian
+        Court Hotel","last_name":"Guestfolio","address":"773 Beatty Street","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-682-5555","website":"http:\/\/www.georgiancourthotelvancouver.com","website_access":"false"},{"username":"gf-legends-at-creekside","email":"support@guestfolio.com","active":"true","first_name":"Legends
+        at Creekside","last_name":"Guestfolio","address":" 2036 London Ln","address2":"","city":"Whistler","state":"BC","zip":"N\/a","country":"Canad","phone":"604-296-5241","website":"http:\/\/www.legendswhistler.com\/","website_access":"false"},{"username":"gf-hotel-guestfolio-71","email":"support@guestfolio.com","active":"true","first_name":"Hotel
+        Guestfolio 71","last_name":"Guestfolio","address":"1500 Main Street","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-555-1212","website":"http:\/\/hotel.example.com\/","website_access":"false"},{"username":"gf-hotel-guestfolio-74","email":"support@guestfolio.com","active":"true","first_name":"Hotel
+        Guestfolio 74","last_name":"Guestfolio","address":"1500 Main Street","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-555-1212","website":"http:\/\/hotel.example.com\/","website_access":"false"},{"username":"gf-hotel-guestfolio-75","email":"support@guestfolio.com","active":"true","first_name":"Hotel
+        Guestfolio 75","last_name":"Guestfolio","address":"1500 Main Street","address2":"","city":"Vancouver","state":"BC","zip":"N\/a","country":"Canad","phone":"604-555-1212","website":"http:\/\/hotel.example.com\/","website_access":"false"}]'
+    http_version: 
+  recorded_at: Thu, 31 Oct 2013 15:14:44 GMT
+recorded_with: VCR 2.6.0

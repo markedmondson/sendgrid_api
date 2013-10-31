@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.profile.json?api_key=invalid&api_user=api-user&task=get
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Thu, 31 Oct 2013 18:17:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '95'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.21
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=80036e7bbd46c470f2dc3bfc008ae5eb:d91a2d5049aa490687444d36aaf85d64ff7e71c8;
+        expires=Sat, 30-Nov-2013 19:17:52 GMT; path=/; httponly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"error":{"code":401,"message":"Permission denied, wrong credentials"}}'
+    http_version: 
+  recorded_at: Thu, 31 Oct 2013 18:17:52 GMT
+recorded_with: VCR 2.6.0

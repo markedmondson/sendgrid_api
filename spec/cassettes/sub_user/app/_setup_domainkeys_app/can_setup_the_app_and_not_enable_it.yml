@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sendgrid.com/apiv2/customer.apps.json
+    body:
+      encoding: US-ASCII
+      string: name=domainkeys&user=user-test&domain=test.com&sender=1&api_user=api-user&api_key=api-key&task=setup
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Thu, 31 Oct 2013 19:22:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '46'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.21
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=d92604792dd7b1aa1a6da8700cbc0144:cbdcc85ad97485d2aa7db87d3ee0b1c8c18131dd;
+        expires=Sat, 30-Nov-2013 20:22:29 GMT; path=/; httponly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
+    http_version: 
+  recorded_at: Thu, 31 Oct 2013 19:22:29 GMT
+- request:
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=api-key&api_user=api-user&task=getavailable&user=user-test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Thu, 31 Oct 2013 19:22:30 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '861'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.21
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=a6bfff2143009efa94a18cfd5b35c3d2:a2bf14685dc45ac9a6bdd082cf5e081eacf71b6a;
+        expires=Sat, 30-Nov-2013 20:22:29 GMT; path=/; httponly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '[{"name":"gravatar","title":"Gravatar","description":"Appends your
+        gravatar to each HTML email.","activated":false},{"name":"clicktrack","title":"Click
+        Tracking","description":"Overwrites every link to track every click in emails.","activated":false},{"name":"subscriptiontrack","title":"Subscription
+        Tracking","description":"Adds unsubscribe links to the bottom of the text
+        and HTML emails.  Future emails won''t be delivered to unsubscribed users.","activated":false},{"name":"opentrack","title":"Open
+        Tracking","description":"Appends an invisible image to HTML emails to track
+        emails that have been opened.","activated":false},{"name":"footer","title":"Footer","description":"Allows
+        you to add a custom footer to outgoing email.","activated":false},{"name":"spamcheck","title":"Spam
+        Checker","description":"Check outbound messages for spam content.","activated":false},{"name":"ganalytics","title":"Google
+        Analytics","description":"Track your conversion rates and ROI with Google
+        Analytics.","activated":false},{"name":"template","title":"Email Template","description":"Allows
+        you to customize your outgoing HTML emails.","activated":false},{"name":"domainkeys","title":"Domain
+        Keys","description":"Allows email to be signed with DomainKeys.","activated":false},{"name":"bcc","title":"BCC","description":"Automatically
+        BCC an address for every e-mail sent.","activated":false},{"name":"eventnotify","title":"Event
+        Notification","description":"Controls notifications for events, such as bounces,
+        clicks, and opens.","activated":false},{"name":"seedlist","title":"Return
+        Path Seedlist","description":"For Return Path customers, with your seedlist
+        for delivery monitoring.","activated":false},{"name":"forwardspam","title":"Forward
+        Spam","description":"Allows for a copy of spam reports to be forwarded to
+        an email address.","activated":false},{"name":"addresswhitelist","title":"Address
+        Whitelist","description":"Address \/ domains that should never have email
+        suppressed.","activated":false},{"name":"dkim","title":"DKIM","description":"Allows
+        email to be signed with DKIM. Cannot be disabled.","activated":true},{"name":"newrelic","title":"SendGrid
+        for New Relic","description":"Integrate SendGrid with your New Relic account
+        to access your email statistics via the <a target=\"blank\" href=\"https:\/\/newrelic.com\/sendgrid\">New
+        Relic<\/a> Dashboard.","activated":false}]'
+    http_version: 
+  recorded_at: Thu, 31 Oct 2013 19:22:30 GMT
+recorded_with: VCR 2.6.0

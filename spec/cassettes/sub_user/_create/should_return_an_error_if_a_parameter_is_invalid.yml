@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sendgrid.com/apiv2/customer.add.json
+    body:
+      encoding: US-ASCII
+      string: username=&email=test%40address.com&company=company&first_name=first&last_name=last&address=address&address2=&city=city&state=state&zip=zip&country=xx&phone=phone&website=http%3A%2F%2Fwww.website.com&password=password&confirm_password=password&api_user=api-user&api_key=api-key
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept:
+      - application/json
+      Accept-Charset:
+      - utf-8
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - 30
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Thu, 31 Oct 2013 19:23:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '75'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.21
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=234839670e630074294a17bbc91ca2ad:1f8aff7e4a4f4143e968c1bfbb9e9c3275f415ca;
+        expires=Sat, 30-Nov-2013 20:23:54 GMT; path=/; httponly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"message":"error","errors":["Username is required"]}'
+    http_version: 
+  recorded_at: Thu, 31 Oct 2013 19:23:55 GMT
+recorded_with: VCR 2.6.0

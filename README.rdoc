@@ -1,0 +1,126 @@
+= SendgridApi
+
+This limited SendGrid WebAPI integration provides functionality for managing sub users and sending mail through the WebAPI either manually or using an ActionMailer.
+
+See: http://sendgrid.com/docs/API_Reference/Web_API/
+
+== Interfacing with the API directly
+
+=== Configuration
+
+In your initializer:
+
+  SendgridApi.configure do |config|
+    config.api_user = "api-user"
+    config.api_key  = "api-key"
+  end
+
+==== Create client
+
+  client = SendgridApi::Client.new({api_user: "api-user", api_key: "api-key"})
+
+==== Send Mail
+
+  mail = SendgridApi::Mail.new(client)
+
+or initialize client with pass through arguments
+
+  mail = SendgridApi::Mail.new(nil, {api_user: "api_user", api-key: "api-key"})
+  mail.category("your_category")
+  mail.filters(:openclick)
+  mail.filters({openclick: {settings: {enabled: 1}}})
+  mail.unique_args(key: "value")
+  mail.queue(to: "to@address.com", from: "from@address.com", subject: "subject", text: "text", html: "HTML")
+
+==== Setup Sub user
+
+  sub_user = SendgridApi::SubUser.new(client).create(
+    company:          "company",
+    username:         "username",
+    email:            "email",
+    first_name:       "first_name",
+    last_name:        "last_name",
+    address:          "address",
+    city:             "city",
+    state:            "state",
+    zip:              "zip",
+    country:          "country",
+    phone:            "phone",
+    website:          "website",
+    password:         "password",
+    confirm_password: "confirm_password"
+  )
+
+==== Misc Sub user settings
+
+  SendgridApi::SubUser.new(client).set_limit({user: "username", credits: 500})
+  SendgridApi::SubUser.new(client).get_limit(user: "username")
+  SendgridApi::SubUser.new(client).append_ip({user: "username", set: "127.0.0.1"})
+
+==== Sub user apps
+
+  SendgridApi::SubUser.new(client).setup_dkim_app({user: "username", domain: "domain.com", use_from: 0})
+  SendgridApi::SubUser.new(client).setup_eventnotify({user: "username", url: "http://www.callback.com", processed: 1})
+
+  For options, see: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/apps.html
+
+== Sending Mail through ActionMailer
+
+=== Configuration
+
+In your initializer:
+
+  ActionMailer::Base.add_delivery_method :sendgrid_api, Mail::Sendgrid, api_user: "api-user", api_key: "api-key"
+
+==== Send Mail
+
+Use your usual action mailer code after setting the delivery method
+
+  default delivery_method: :sendgrid_api
+
+Headers must be modified within the ActionMailer such as: (see http://sendgrid.com/docs/API_Reference/SMTP_API/index.html for reference)
+
+  headers['X-SMTPAPI'] = {
+    category: "your_category",
+    unique_args: {
+      id: 1
+    },
+    filters: {
+      opentrack:  {settings: {enable: 1}},
+      clicktrack: {settings: {enable: 1}},
+    }
+  }.to_s
+
+or
+
+  headers['X-SMTPAPI'] = SendgridApi::XSmtp.new do |x|
+    x.category("your_category")
+    x.unique_args(id: 1)
+    x.filters(:opentrack)
+    x.filters(:clicktrack)
+  end.to_s
+
+or
+
+  headers['X-SMTPAPI'] = SendgridApi::XSmtp.new().to_s
+
+or
+
+  headers 'X-SMTPAPI' => { "category" => "your_category" }.to_s
+
+=== Conditionally change api key in ActionMailer
+
+  client = SendgridApi::Client.new({ api_user: "api-user2", api_key: "api-key2" })
+  m = mail(
+      to: "to@address.com",
+      from: "from@address.com",
+      subject: "subject",
+      text: "text",
+      html: "HTML") do |format|
+    format.text { render text: @text_content }
+    format.html { Premailer.new(@html_content, self.premailer_options).to_inline_css }
+  end
+  m.delivery_method.client = client
+  m.deliver!
+
+bcc, reply_to and return_path are also supported
