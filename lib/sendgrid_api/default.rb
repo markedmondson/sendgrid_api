@@ -7,7 +7,7 @@ require 'sendgrid_api/version'
 
 module SendgridApi
   module Default
-    Faraday.default_adapter = :net_http_persistent
+#     Faraday.default_adapter = :net_http_persistent
 
     ENDPOINT = 'https://sendgrid.com/apiv2'
     MIDDLEWARE = Faraday::Builder.new do |builder|
