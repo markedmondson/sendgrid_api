@@ -35,6 +35,14 @@ module SendgridApi
       filters({bcc: {settings: {email: email}}})
     end
 
+    # Add a spam check application
+    # @param [Float] max_score
+    # @param [String] callback url
+    #
+    def spamcheck(url, max_score=5.0)
+      filters(spamcheck: {settings: {enable: 1, maxscore: max_score, url: url}})
+    end
+
     # Set Sendgrid applications/filters
     # Takes either the filter name and enables, or a raw hash
     # @param [Symbol,String,Hash]
