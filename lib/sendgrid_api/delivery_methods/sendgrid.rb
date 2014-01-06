@@ -26,6 +26,12 @@ module Mail
       to      = to.split(",").collect(&:strip) if to.is_a? String
       to      = Array(to).collect { |to| Mail::Address.new(to) }
 
+      if (mail[:bcc])
+        bcc     = mail[:bcc].value
+        bcc     = bcc.split(",").collect(&:strip) if bcc.is_a? String
+        bcc     = Array(bcc).collect { |bcc| Mail::Address.new(bcc).address }
+      end
+
       # Set the Return-Path header if we have a from email address
       from    = Mail::Address.new(mail[:from].value)
       mail.header["Return-Path"] = from.address unless from.address.nil? || !mail.header["Return-Path"].nil?
@@ -43,7 +49,7 @@ module Mail
         toname:   to.collect(&:name),
         from:     from.address,
         fromname: from.display_name,
-        bcc:      mail.bcc.blank?       ? nil : mail.bcc.first,
+        bcc:      bcc,
         subject:  mail.subject,
         text:     mail.text_part.blank? ? nil : mail.text_part.body,
         html:     mail.html_part.blank? ? nil : mail.html_part.body,

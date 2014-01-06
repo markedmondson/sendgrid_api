@@ -38,7 +38,7 @@ module Mail
               toname:   [nil],
               from:     "from@address.com",
               fromname: "Tester",
-              bcc:      "bcc@address.com",
+              bcc:      ["bcc@address.com"],
               subject:  "Rspec test",
               text:     kind_of(::Mail::Body),
               headers:  kind_of(String),
@@ -106,6 +106,56 @@ module Mail
 
           to_mail.to = "to@address.com, and@address.com"
           subject.deliver!(to_mail).should == success
+        end
+      end
+
+      context "BCC recipients" do
+        let(:bcc_mail)  {
+          Mail.new(
+            from:     '"Tester" <from@address.com>',
+            to:       '"Tester <to@address.com>"',
+            subject:  "Rspec test",
+            bcc:      ["Tester <bcc@address.com>", "Another <and@address.com>"],
+          ) do
+            text_part { body 'This is plain text' }
+          end
+        }
+
+        it "should return a successful response with BCC addresses only" do
+          subject.client.should_receive(:post).with(
+            "send",
+            nil,
+            hash_including(
+              bcc:      ["bcc@address.com", "and@address.com"],
+              subject:  "Rspec test"
+            )
+          ).and_return(success)
+
+          subject.deliver!(bcc_mail).should == success
+        end
+
+        it "should allow multiple recipients as a string" do
+          subject.client.should_receive(:post).with(
+            "send",
+            nil,
+            hash_including(
+              bcc:      ["bcc@address.com", "and@address.com"]
+            )
+          ).and_return(success)
+
+          bcc_mail.to = "bcc@address.com, and@address.com"
+          subject.deliver!(bcc_mail).should == success
+        end
+
+        it "should allow an empty bcc" do
+          subject.client.should_receive(:post).with(
+            "send",
+            nil,
+            hash_excluding(:bcc)
+          ).and_return(success)
+
+          bcc_mail.bcc = nil
+          subject.deliver!(bcc_mail).should == success
         end
       end
 
