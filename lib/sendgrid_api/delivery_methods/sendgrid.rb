@@ -22,19 +22,19 @@ module Mail
       check_delivery_params(mail)
 
       # Extract the recipients, allows array of strings, array of addresses or comma separated string
-      to      = mail[:to].value
-      to      = to.split(",").collect(&:strip) if to.is_a? String
-      to      = Array(to).collect { |to| Mail::Address.new(to) }
+      to = mail[:to].value
+      to = to.split(",").collect(&:strip) if to.is_a? String
+      to = Array(to).collect { |to| Mail::Address.new(to) }
 
       if (mail[:bcc])
-        bcc     = mail[:bcc].value
-        bcc     = bcc.split(",").collect(&:strip) if bcc.is_a? String
-        bcc     = Array(bcc).collect { |bcc| Mail::Address.new(bcc).address }
+        bcc = mail[:bcc].value
+        bcc = bcc.split(",").collect(&:strip) if bcc.is_a? String
+        bcc = Array(bcc).collect { |bcc| Mail::Address.new(bcc).address }
       end
 
       # Set the Return-Path header if we have a from email address
-      from    = Mail::Address.new(mail[:from].value)
-      mail.header["Return-Path"] = from.address unless from.address.nil? || !mail.header["Return-Path"].nil?
+      from = Mail::Address.new(mail[:from].value)
+      mail.header["Return-Path"] = from.address if mail.header["Return-Path"].nil?
 
       # Put Reply-To on the headers as Sendgrid Web API only accepts an address
       mail.header["Reply-To"] = Mail::Address.new(mail[:reply_to].value) if (mail[:reply_to])

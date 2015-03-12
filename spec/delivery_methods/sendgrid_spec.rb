@@ -71,9 +71,9 @@ module Mail
       context "multiple recipients" do
         let(:to_mail)  {
           Mail.new(
-            from:     Mail::Address.new('"Tester" <from@address.com>'), # Or just "Tester" <from@address.com>
-            to:       ["Tester <to@address.com>", "Another <and@address.com>"],
-            subject:  "Rspec test"
+            from:    Mail::Address.new('"Tester" <from@address.com>'), # Or just "Tester" <from@address.com>
+            to:      ["Tester <to@address.com>", "Another <and@address.com>"],
+            subject: "Rspec test"
           ) do
             text_part { body 'This is plain text' }
           end
@@ -100,7 +100,7 @@ module Mail
             "send",
             nil,
             hash_including(
-              to:       ["to@address.com", "and@address.com"]
+              to: ["to@address.com", "and@address.com"]
             )
           ).and_return(success)
 
@@ -112,10 +112,10 @@ module Mail
       context "BCC recipients" do
         let(:bcc_mail)  {
           Mail.new(
-            from:     '"Tester" <from@address.com>',
-            to:       '"Tester <to@address.com>"',
-            subject:  "Rspec test",
-            bcc:      ["Tester <bcc@address.com>", "Another <and@address.com>"],
+            from:    '"Tester" <from@address.com>',
+            to:      '"Tester <to@address.com>"',
+            subject: "Rspec test",
+            bcc:     ["Tester <bcc@address.com>", "Another <and@address.com>"],
           ) do
             text_part { body 'This is plain text' }
           end
@@ -156,6 +156,32 @@ module Mail
 
           bcc_mail.bcc = nil
           subject.deliver!(bcc_mail).should == success
+        end
+      end
+
+      context "multiple from addresses" do
+        let(:from_mail)  {
+          Mail.new(
+            from:    '"Tester" <from@address.com>, Another tester <from2@address.com>',
+            to:      'Tester <to@address.com>',
+            subject: "Rspec test"
+          ) do
+            text_part { body 'This is plain text' }
+          end
+        }
+
+        it "should return a successful response" do
+          subject.client.should_receive(:post).with(
+            "send",
+            nil,
+            hash_including(
+              from:     "from@address.com",
+              fromname: "Tester",
+              subject:  "Rspec test"
+            )
+          ).and_return(success)
+
+          subject.deliver!(from_mail).should == success
         end
       end
 

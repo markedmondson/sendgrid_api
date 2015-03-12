@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency "json_spec"
 
   s.add_runtime_dependency "log4r"
-  s.add_runtime_dependency "mail"
+  s.add_runtime_dependency "mail", "~> 2.5"
   s.add_runtime_dependency "faraday_middleware", "~> 0.9"
   s.add_runtime_dependency "json"
   s.add_runtime_dependency "multi_xml"
