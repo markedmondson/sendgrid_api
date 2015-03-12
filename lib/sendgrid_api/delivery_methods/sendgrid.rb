@@ -78,7 +78,7 @@ module Mail
     #
     def header_to_hash(mail)
       reject_keys = %w(To From Bcc Subject X-SMTPAPI)
-      if mail['Content-Type'].value.start_with?('multipart/alternative')
+      if mail['Content-Type'] && mail['Content-Type'].value.start_with?('multipart/alternative')
         reject_keys.concat %w(Content-Type Mime-Version)
       end
       mail.header_fields.each_with_object(Hash.new) do |field, hash|
