@@ -21,7 +21,7 @@ module SendgridApi
 
       def call(env)
         @app.call(env).on_complete do |environment|
-          env[:body] = parse(env[:body])
+          environment[:body] = parse(environment[:body])
           on_complete(environment)
         end
       end

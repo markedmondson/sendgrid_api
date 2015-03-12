@@ -10,7 +10,7 @@ module SendgridApi
 #     Faraday.default_adapter = :net_http_persistent
 
     ENDPOINT = 'https://sendgrid.com/apiv2'
-    MIDDLEWARE = Faraday::Builder.new do |builder|
+    MIDDLEWARE = Faraday::RackBuilder.new do |builder|
       # Encode request params as "www-form-urlencoded"
       builder.use Faraday::Request::UrlEncoded
       # Parse JSON response bodies
