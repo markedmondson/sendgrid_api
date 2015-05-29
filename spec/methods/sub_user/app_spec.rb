@@ -15,13 +15,13 @@ module SendgridApi
 
     describe ".list_apps" do
       it "should return the available apps" do
-        subject.list_apps(user).response.should include_app("domainkeys", false)
+        subject.list_apps(user).body.should include_app("domainkeys", false)
       end
     end
 
     describe ".activate_app" do
       it "should activate an app for the user" do
-        subject.activate_app(user.merge(name: "domainkeys")).response.should == {message: "success"}
+        subject.activate_app(user.merge(name: "domainkeys")).body.should == {message: "success"}
       end
     end
 
@@ -30,20 +30,20 @@ module SendgridApi
       let(:params)   { user.merge(settings) }
 
       it "should setup the domainkeys app" do
-        subject.setup_domainkeys_app(params).response.should == {message: "success"}
-        subject.app_settings(user.merge(name: "domainkeys")).response.should == { settings: settings }
+        subject.setup_domainkeys_app(params).body.should == {message: "success"}
+        subject.app_settings(user.merge(name: "domainkeys")).body.should == { settings: settings }
       end
 
       it "should enable the app by default" do
         subject.should receive(:activate_app)
-        subject.setup_domainkeys_app(params).response.should == {message: "success"}
-        subject.list_apps(user).response.should include_app("domainkeys", true)
+        subject.setup_domainkeys_app(params).body.should == {message: "success"}
+        subject.list_apps(user).body.should include_app("domainkeys", true)
       end
 
       it "can setup the app and not enable it" do
         subject.should_not receive(:activate_app)
-        subject.setup_domainkeys_app(params.merge(enable: false)).response.should == {message: "success"}
-        subject.list_apps(user).response.should include_app("domainkeys", false)
+        subject.setup_domainkeys_app(params.merge(enable: false)).body.should == {message: "success"}
+        subject.list_apps(user).body.should include_app("domainkeys", false)
       end
     end
 
@@ -52,8 +52,8 @@ module SendgridApi
       let(:params)   { user.merge(settings) }
 
       it "should setup the address whitelist app" do
-        subject.setup_addresswhitelist_app(params).response.should == {message: "success"}
-        subject.app_settings(user.merge(name: "addresswhitelist")).response.should == {settings: settings}
+        subject.setup_addresswhitelist_app(params).body.should == {message: "success"}
+        subject.app_settings(user.merge(name: "addresswhitelist")).body.should == {settings: settings}
       end
     end
 

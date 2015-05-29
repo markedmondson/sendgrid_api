@@ -3,6 +3,8 @@ require 'json'
 
 module SendgridApi
   class Client
+    include SendgridApi::Configurable
+
     attr_reader :action, :format, :logger
     attr_accessor :method
 
@@ -92,22 +94,13 @@ module SendgridApi
       params
     end
 
-    # Setup the Faraday::Request headers
-    #
-    def headers
-      {
-        ACCEPT: "application/#{@format}",
-        ACCEPT_CHARSET: "utf-8"
-      }
-    end
-
     def request(method, params={})
-      response = connection.send(method.to_sym, path_setup, request_params(params), headers)
+      response = connection.send(method.to_sym, path_setup, request_params(params))
       Result.new(response.body) #.force_encoding('utf-8')
-    rescue JSON::ParserError => e
+    rescue SendgridApi::Error::ParserError => e
       @logger.error "Unable to parse Sendgrid API response: #{e.message}"
       @logger.debug response
-      raise SendgridApi::Error::ParserError.new e.message
+      raise e
     end
 
     # Returns a Faraday::Connection object
@@ -115,7 +108,7 @@ module SendgridApi
     # @return [Faraday::Connection]
     #
     def connection
-      @connection ||= Faraday.new(@endpoint, builder: @middleware)
+      @connection ||= Faraday.new(@endpoint, @connection_options, &@middleware)
     end
   end
 end

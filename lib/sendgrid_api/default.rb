@@ -7,24 +7,7 @@ require 'sendgrid_api/version'
 
 module SendgridApi
   module Default
-#     Faraday.default_adapter = :net_http_persistent
-
-    ENDPOINT = 'https://sendgrid.com/apiv2'
-    MIDDLEWARE = Faraday::RackBuilder.new do |builder|
-      # Encode request params as "www-form-urlencoded"
-      builder.use Faraday::Request::UrlEncoded
-      # Parse JSON response bodies
-      builder.use SendgridApi::Response::ParseJson#, content_type: /\bjson$/
-      # Parse XML response bodies
-      builder.use SendgridApi::Response::ParseXml#, content_type: /\bxml$/
-      # Use Faraday logger
-      builder.use Faraday::Response::Logger if ENV['DEBUG']
-      # Set Faraday's HTTP adapter
-      builder.adapter Faraday.default_adapter
-    end
-
     class << self
-
       # @return [Hash]
       def options
         Hash[SendgridApi::Configurable.keys.map{|key| [key, send(key)]}]
@@ -45,9 +28,23 @@ module SendgridApi
         :json
       end
 
+      def connection_options
+        {
+          headers: {
+            accept: 'application/#{format}',
+            accept_charset: 'utf-8',
+            user_agent: "SendgridApi Ruby Gem v#{SendgridApi::VERSION}"
+          },
+          request: {
+            open_timeout: 5,
+            timeout: 10
+          }
+        }
+      end
+
       # @return [String]
       def endpoint
-        ENDPOINT
+        @endpoint ||= 'https://sendgrid.com/apiv2'
       end
 
       # @note Faraday's middleware stack implementation is comparable to that of Rack middleware.  The order of middleware is important: the first middleware on the list wraps all others, while the last middleware is the innermost one.
@@ -55,7 +52,17 @@ module SendgridApi
       # @see http://mislav.uniqpath.com/2011/07/faraday-advanced-http/
       # @return [Faraday::Builder]
       def middleware
-        MIDDLEWARE
+        @middleware ||= proc do |builder|
+          # Encode request params as "www-form-urlencoded"
+          builder.use Faraday::Request::UrlEncoded
+
+          builder.response :sendgrid_api_parse_json#, content_type: /\bjson$/
+          # builder.response SendgridApi::Response::ParseXml#, content_type: /\bxml$/
+          builder.response Faraday::Response::Logger if ENV['DEBUG']
+
+          # Set Faraday's HTTP adapter
+          builder.adapter Faraday.default_adapter
+        end
       end
 
     end

@@ -26,7 +26,7 @@ module SendgridApi
 
     describe ".list", :vcr do
       it "should return the list of sub users" do
-        subject.list({username: "user-test"}).response.should == [{
+        subject.list({username: "user-test"}).body.should == [{
           username:         "user-test",
           email:            "test@address.com",
           active:           "true",

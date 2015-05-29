@@ -9,7 +9,7 @@ module SendgridApi
 
     describe ".list_ip" do
       it "should return the user ip addresses" do
-        subject.list_ip(user).response.should == {success: "success", outboundcluster: "SendGrid MTA", ips: []}
+        subject.list_ip(user).body.should == {success: "success", outboundcluster: "SendGrid MTA", ips: []}
       end
     end
 

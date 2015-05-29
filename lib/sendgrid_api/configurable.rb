@@ -4,7 +4,7 @@ require 'sendgrid_api/default'
 module SendgridApi
   module Configurable
     extend Forwardable
-    attr_accessor :api_user, :api_key, :endpoint, :middleware, :format
+    attr_accessor :api_user, :api_key, :endpoint, :connection_options, :middleware, :format
     def_delegator :options, :hash
 
     class << self
@@ -14,11 +14,30 @@ module SendgridApi
           :api_user,
           :api_key,
           :endpoint,
+          :connection_options,
           :middleware,
           :format
         ]
       end
 
+      # Allows to register middleware for Faraday v0.8 and v0.9
+      #
+      # @param [Symbol] either :request or :response
+      # @param [Symbol] the symbol to register the middleware as
+      # @param [String] the class name of the middleware
+      #
+      def register_middleware(type, name, klass_name)
+        klass = SendgridApi.const_get(type.capitalize).const_get(klass_name)
+        if Faraday.respond_to?(:register_middleware)
+          Faraday.register_middleware type, name => klass
+        else
+          Faraday.const_get(type.capitalize).register_middleware name => klass
+        end
+      end
+
+      def included(_base)
+        register_middleware :response, :sendgrid_api_parse_json, "ParseJson"
+      end
     end
 
     # Convenience method to allow configuration options to be set in a block

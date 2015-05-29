@@ -1,12 +1,12 @@
 module SendgridApi
   class Result
-    attr_reader :response
+    attr_reader :body
 
-    # Initialize a new Response, throw exception for fatal errors
-    # @param [Hash] result
+    # Initialize a new Result using the response body
+    # @param [Hash,Array] response body
     #
-    def initialize(response)
-      @response = response
+    def initialize(body)
+      @body = body
     end
 
     # Was it successful?
@@ -20,23 +20,31 @@ module SendgridApi
     # @return [Boolean]
     #
     def error?
-      @response.is_a?(Hash) ? @response.has_key?(:error) || @response.has_key?(:errors) : false
-    end
-
-    def errors
-      message if error?
+      body_error?
     end
 
     # Sometimes there's an error code
+    # @return [String]
+    #
     def code
-      @response.fetch(:error, {}).fetch(:code, nil) if @response.is_a?(Hash) && error?
+      body_error.fetch(:code, nil) if error?
     end
 
     # Return the message from the response
     # @return [String]
     #
     def message
-      @response.fetch(:error, {}).fetch(:message, nil) || @response.fetch(:errors, nil) || @response.fetch(:message, nil) if @response.is_a?(Hash)
+      (body_error.fetch(:message, nil) || body.fetch(:errors, nil) || body.fetch(:message, nil)) if body.is_a?(Hash)
+    end
+
+    private
+
+    def body_error?
+      (body.has_key?(:error) || body.has_key?(:errors)) if body.is_a?(Hash)
+    end
+
+    def body_error
+      body.fetch(:error, {}) if body.is_a?(Hash)
     end
   end
 end

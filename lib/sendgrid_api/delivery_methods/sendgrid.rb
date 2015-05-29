@@ -55,7 +55,7 @@ module Mail
         html:     mail.html_part.blank? ? nil : mail.html_part.body,
         headers:  header_to_hash(mail).to_json
       )
-      raise SendgridApi::Error::DeliveryError.new(result.errors) if result.error?
+      raise SendgridApi::Error::DeliveryError.new(result.message) if result.error?
       return result
     end
 

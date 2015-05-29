@@ -53,23 +53,21 @@ module SendgridApi
         it "should call the requested method" do
           result = subject.get("profile", "get")
           result.success?.should == true
-          result.response.should be_a_kind_of(Array)
+          result.body.should be_a_kind_of(Array)
         end
       end
 
       context "when the response cannot be parsed" do
-        pending
-
         it "should throw an exception and log the error" do
           logger = double(:logger)
           logger.stub(:error).with(an_instance_of(String)) do |error|
-            error.should == "Unable to parse Sendgrid API response: JSON::ParserError"
+            error.should == "Unable to parse Sendgrid API response: SendgridApi::Error::ParserError"
           end
           logger.stub(:debug)
 
           subject = Client.new(config.merge(method: "customer", logger: logger))
 
-          expect_any_instance_of(Faraday::Connection).to receive(:get) { raise JSON::ParserError }
+          expect_any_instance_of(Faraday::Connection).to receive(:get) { raise SendgridApi::Error::ParserError }
           expect { subject.get("profile", "get") }.to raise_error SendgridApi::Error::ParserError
         end
       end

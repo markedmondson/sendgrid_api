@@ -9,7 +9,7 @@ module SendgridApi
 
     describe ".get_limit" do
       it "should return the send limit" do
-        subject.get_limit(user).response.should == [{credit: "0", credit_remain: "500", last_reset: "2013-10-31"}]
+        subject.get_limit(user).body.should == [{credit: "0", credit_remain: "500", last_reset: "2013-10-31"}]
       end
 
       it "should return an error if the user doesn't exist" do
