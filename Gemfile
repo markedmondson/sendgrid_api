@@ -5,9 +5,4 @@ source 'https://rubygems.org'
     gem 'pry-byebug'
   end
 
-  group :test do
-    gem 'rspec'
-    gem 'webmock'
-  end
-
 gemspec

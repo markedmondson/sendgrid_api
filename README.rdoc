@@ -32,6 +32,10 @@ or initialize client with pass through arguments
   mail.unique_args(key: "value")
   mail.queue(to: "to@address.com", from: "from@address.com", subject: "subject", text: "text", html: "HTML")
 
+For sending mail to non-ascii addresses, ensure that the addresses is passed to mail as an encoded string such as
+
+  to = Mail::Address.new("to@address.com").tap { |m| m.display_name = "Øwen" }.encoded
+
 ==== Setup Sub user
 
   sub_user = SendgridApi::SubUser.new(client).create(
@@ -124,3 +128,10 @@ or
   m.deliver!
 
 bcc, reply_to and return_path are also supported
+
+==== Running tests
+
+There are inconsistancies between mail versions and thus Rails 3 and 4 implementations are slightly different, to run the tests for both versions 2.5.x and 2.6.x of the mail gem, you can use tha appraisal gem.
+
+  appraisal mail-2.5 rspec spec/delivery_methods/sendgrid_spec.rb
+  appraisal mail-2.6 rspec spec/delivery_methods/sendgrid_spec.rb

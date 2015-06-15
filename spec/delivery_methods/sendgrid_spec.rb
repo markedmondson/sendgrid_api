@@ -109,6 +109,54 @@ module Mail
         end
       end
 
+      context "for encoded addresses" do
+        let(:from) { Mail::Address.new("from@address.com").tap { |m| m.display_name = "José Publico" }.encoded }
+        let(:mail) {
+          Mail.new(
+            from:     from,
+            to:       to,
+            subject:  "Rspec test"
+          ) do
+            text_part { body 'This is plain text' }
+          end
+        }
+
+        context "addresses with non-ascii string addresses" do
+          let(:to) { '"José Publico" <to@address.com>' }
+
+          it "should raise an exception" do
+            expect{ subject.deliver!(mail) }.to raise_error Mail::Field::ParseError
+          end
+        end
+
+        context "addresses with Mail::Address addresses" do
+          let(:to) { Mail::Address.new("to@address.com").tap { |m| m.display_name = "José Publico" } }
+
+          it "should raise an exception" do
+            expect{ subject.deliver!(mail) }.to raise_error Mail::Field::ParseError
+          end
+        end
+
+        context "addresses with encoded string addresses" do
+          let(:to) { Mail::Address.new("to@address.com").tap { |m| m.display_name = "José Publico" }.encoded }
+
+          it "should send successfully" do
+            subject.client.should_receive(:post).with(
+              "send",
+              nil,
+              hash_including(
+                to:       ["to@address.com"],
+                toname:   ["José Publico"],
+                from:     "from@address.com",
+                fromname: "José Publico"
+              )
+            ).and_return(success)
+
+            subject.deliver!(mail).should == success
+          end
+        end
+      end
+
       context "BCC recipients" do
         let(:bcc_mail)  {
           Mail.new(
