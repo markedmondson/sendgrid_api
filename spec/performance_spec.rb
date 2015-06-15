@@ -23,7 +23,7 @@ module SendgridApi
             subject.post("send", nil, simple_message)
           }
         end
-        (time / RUN_TIMES).should < 0.25
+        expect(time / RUN_TIMES).to < 0.25
       end
     end
 
@@ -40,7 +40,7 @@ module SendgridApi
             subject.send(:request, :post, message)
           }
         end
-        (time / RUN_TIMES).should < 0.25
+        expect(time / RUN_TIMES).to < 0.25
       end
     end
 

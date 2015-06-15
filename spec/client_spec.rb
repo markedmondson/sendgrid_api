@@ -17,12 +17,12 @@ module SendgridApi
       end
 
       it "should allow the default attributes to be set" do
-        Client.new(format: :xml).instance_variable_get("@format").should == :xml
-        Client.new(config).instance_variable_get("@api_key").should == config[:api_key]
+        expect(Client.new(format: :xml).instance_variable_get("@format")).to eq :xml
+        expect(Client.new(config).instance_variable_get("@api_key")).to eq config[:api_key]
       end
 
       it "should allow the method be set" do
-        Client.new(method: "test").method.should == "test"
+        expect(Client.new(method: "test").method).to eq "test"
       end
     end
 
@@ -30,7 +30,7 @@ module SendgridApi
       subject(:client) { Client.new(config.merge(method: "customer")) }
 
       it "should return back a result", :vcr do
-        subject.get("profile", "get").should be_kind_of(Result)
+        expect(subject.get("profile", "get")).to be_kind_of(Result)
       end
 
       context "with invalid authentication params", :vcr do
@@ -52,8 +52,8 @@ module SendgridApi
       context "with valid params", :vcr do
         it "should call the requested method" do
           result = subject.get("profile", "get")
-          result.success?.should == true
-          result.body.should be_a_kind_of(Array)
+          expect(result.success?).to eq true
+          expect(result.body).to be_a_kind_of(Array)
         end
       end
 
@@ -61,7 +61,7 @@ module SendgridApi
         it "should throw an exception and log the error" do
           logger = double(:logger)
           logger.stub(:error).with(an_instance_of(String)) do |error|
-            error.should == "Unable to parse Sendgrid API response: SendgridApi::Error::ParserError"
+            expect(error).to eq "Unable to parse Sendgrid API response: SendgridApi::Error::ParserError"
           end
           logger.stub(:debug)
 

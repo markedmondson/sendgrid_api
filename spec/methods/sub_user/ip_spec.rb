@@ -9,14 +9,13 @@ module SendgridApi
 
     describe ".list_ip" do
       it "should return the user ip addresses" do
-        subject.list_ip(user).body.should == {success: "success", outboundcluster: "SendGrid MTA", ips: []}
+        expect(subject.list_ip(user).body).to eq({success: "success", outboundcluster: "SendGrid MTA", ips: []})
       end
     end
 
     describe ".append_ip" do
-      it "should append the ip to the user" do
+      xit "should append the ip to the user" do
         subject.append_ip(user.merge(set: "127.0.0.1"))
-        pending
       end
     end
   end
