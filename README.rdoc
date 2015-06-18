@@ -1,6 +1,4 @@
-= SendgridApi
-
-{<img src="https://travis-ci.org/markedmondson/sendgrid_api.svg?branch=master" />}[https://travis-ci.org/markedmondson/sendgrid_api.svg?branch=master]
+= SendgridApi {<img src="https://travis-ci.org/markedmondson/sendgrid_api.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/markedmondson/sendgrid_api]
 
 This limited SendGrid WebAPI integration provides functionality for managing sub users and sending mail through the WebAPI either manually or using an ActionMailer.
 

@@ -4,7 +4,7 @@ require 'benchmark'
 RUN_TIMES = 2
 
 module SendgridApi
-  describe "performance" do
+  describe "performance", performance: true do
     let(:big_str) { (0...500000).map{ ('a'..'z').to_a[rand(26)] }.join }
     let(:message)     { {from: "from@email.com", to: "to@email.com", subject: "Rspec test", html: big_str} }
 
