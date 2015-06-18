@@ -3,9 +3,6 @@ rvm:
   - 2.0.0
   - 2.1.6
   - 2.2.2
-gemfile:
-  - gemfiles/mail_2.5.gemfile
-  - gemfiles/mail_2.6.gemfile
 before_script: bundle exec rake appraisal:install
 script: bundle exec rake appraisal spec
 branches:
