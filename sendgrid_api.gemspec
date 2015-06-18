@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "ruby-prof"
   s.add_development_dependency "json_spec"
   s.add_development_dependency "appraisal"
+  s.add_development_dependency "pry"
+  s.add_development_dependency "pry-byebug"
 
   s.add_runtime_dependency "log4r"
   s.add_runtime_dependency "mail"
