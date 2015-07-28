@@ -4,12 +4,12 @@ module SendgridApi
   describe "sub_user/ip", :vcr do
     subject(:sub_user) { SendgridApi::SubUser.new(nil, config) }
     let(:user) { {
-      user: "user-test",
+      user: "api-test",
     } }
 
-    describe ".list_ip" do
+    describe ".list_ips" do
       it "should return the user ip addresses" do
-        expect(subject.list_ip(user).body).to eq({success: "success", outboundcluster: "SendGrid MTA", ips: []})
+        expect(subject.list_ips(user).body).to eq({success: "success", outboundcluster: "SendGrid MTA", ips: []})
       end
     end
 

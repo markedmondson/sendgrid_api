@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.sendip.json?api_key=api-key&api_user=api-user&task=list&user=user-test
+    uri: https://sendgrid.com/apiv2/customer.sendip.json?api_key=api-key&api_user=api-user&task=list&user=api-test
     body:
       encoding: US-ASCII
       string: ''
@@ -48,6 +48,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"success":"success","outboundcluster":"SendGrid MTA","ips":[]}'
-    http_version: 
+    http_version:
   recorded_at: Thu, 31 Oct 2013 19:22:48 GMT
 recorded_with: VCR 2.6.0
