@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sendgrid.com/apiv2/user.bounces.json
+    body:
+      encoding: UTF-8
+      string: api_key=api-key&api_user=api-user&email=test@test.com&task=delete&user=api-test
+    headers:
+      Accept:
+      - application/#{format}
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - SendgridApi Ruby Gem v1.1.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Tue, 28 Jul 2015 18:35:09 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dbe91a3e311fe3c469b111725781e7a3c1438108509; expires=Wed, 27-Jul-16
+        18:35:09 GMT; path=/; domain=.sendgrid.com; HttpOnly
+      - sendgrid_frontend=55c1eab74da195058d8221c951c6a0a8:44195846a09a4b4339882260076ce5150deb10b2;
+        path=/; secure; httponly
+      X-Powered-By:
+      - PHP/5.3.3
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - 20d2aea4e7210520-SEA
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
+    http_version:
+  recorded_at: Tue, 28 Jul 2015 18:35:09 GMT
+recorded_with: VCR 2.9.3
