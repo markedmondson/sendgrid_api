@@ -3,6 +3,7 @@ require 'sendgrid_api/methods/sub_user/app'
 require 'sendgrid_api/methods/sub_user/bounce'
 require 'sendgrid_api/methods/sub_user/limit'
 require 'sendgrid_api/methods/sub_user/ip'
+require 'sendgrid_api/methods/sub_user/invalid_email'
 require 'sendgrid_api/methods/sub_user/spam_report'
 
 module SendgridApi
@@ -10,6 +11,7 @@ module SendgridApi
     include Customer::App
     include Customer::Limit
     include Customer::Ip
+    include Customer::InvalidEmail
 
     include User::Bounce
     include User::SpamReport

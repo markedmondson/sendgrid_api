@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.invalidemails.json?api_key=api-key&api_user=api-user&task=get&user=api-test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/#{format}
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - SendgridApi Ruby Gem v1.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Tue, 28 Jul 2015 19:06:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d0ccbc05188d3c2b031e41570f0ccc4d41438110384; expires=Wed, 27-Jul-16
+        19:06:24 GMT; path=/; domain=.sendgrid.com; HttpOnly
+      - sendgrid_frontend=840c5a6345840df569e226d1f5f1ee96:059515f29299f8d060432ae9558ee2ceae720159;
+        path=/; secure; httponly
+      X-Powered-By:
+      - PHP/5.3.3
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - 20d2dc7168650c47-SEA
+    body:
+      encoding: UTF-8
+      string: '[{"email":"test@test.com","reason":"Known bad domain"}]'
+    http_version:
+  recorded_at: Tue, 28 Jul 2015 19:06:25 GMT
+recorded_with: VCR 2.9.3

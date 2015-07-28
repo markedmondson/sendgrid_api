@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sendgrid.com/apiv2/customer.invalidemails.json
+    body:
+      encoding: UTF-8
+      string: api_key=api-key&api_user=api-user&email=test%test.com&task=delete&user=api-test
+    headers:
+      Accept:
+      - application/#{format}
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - SendgridApi Ruby Gem v1.2.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Tue, 28 Jul 2015 19:07:19 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d90c42966ed1e3ec11ac3c74e315d25541438110438; expires=Wed, 27-Jul-16
+        19:07:18 GMT; path=/; domain=.sendgrid.com; HttpOnly
+      - sendgrid_frontend=4650d7c4b9939af277c97372d0dc5881:e3d87bbd7f3629142a39ef347380f29d4861b4bb;
+        path=/; secure; httponly
+      X-Powered-By:
+      - PHP/5.3.3
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - 20d2ddc33c921b91-SEA
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
+    http_version:
+  recorded_at: Tue, 28 Jul 2015 19:07:19 GMT
+recorded_with: VCR 2.9.3
