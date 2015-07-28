@@ -3,6 +3,7 @@ require 'sendgrid_api/methods/sub_user/app'
 require 'sendgrid_api/methods/sub_user/bounce'
 require 'sendgrid_api/methods/sub_user/limit'
 require 'sendgrid_api/methods/sub_user/ip'
+require 'sendgrid_api/methods/sub_user/spam_report'
 
 module SendgridApi
   class SubUser < SendgridApi::Method
@@ -11,9 +12,10 @@ module SendgridApi
     include Customer::Ip
 
     include User::Bounce
+    include User::SpamReport
 
     def initialize(client=nil, options={})
-      @method ||= "customer"
+      @method = "customer"
       super
     end
 

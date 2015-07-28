@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sendgrid.com/api/user.spamreports.json?api_key=api-key&api_user=api-user&task=get&user=api-test
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/#{format}
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - SendgridApi Ruby Gem v1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Tue, 28 Jul 2015 18:56:05 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=daf6f106ecc5bb25b8c5973a42b93d2131438109764; expires=Wed, 27-Jul-16
+        18:56:04 GMT; path=/; domain=.sendgrid.com; HttpOnly
+      - sendgrid_frontend=5cef08a7f4dfefb7b010f707287c6152:8efa447a1679d5a88e3b4ad76ef695f13091aa46;
+        path=/; secure; httponly
+      X-Powered-By:
+      - PHP/5.3.3
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - 20d2cd4e56f50c3b-SEA
+    body:
+      encoding: UTF-8
+      string: '[{"email":"test@test.com"}]'
+    http_version:
+  recorded_at: Tue, 28 Jul 2015 18:56:05 GMT
+recorded_with: VCR 2.9.3
