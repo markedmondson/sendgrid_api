@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/user.bounces.json?api_key=api-key&api_user=api-user&task=get&user=api-test
+    uri: https://sendgrid.com/api/user.bounces.json?api_key=api-key&api_user=api-user&task=get&user=api-test
     body:
       encoding: US-ASCII
       string: ''
