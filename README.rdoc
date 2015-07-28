@@ -68,6 +68,12 @@ For sending mail to non-ascii addresses, ensure that the addresses is passed to 
 
   For options, see: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/apps.html
 
+===== Other supported sub user methods
+
+ * Bounces
+ * Invalid emails
+ * Spam report
+
 == Sending Mail through ActionMailer
 
 === Configuration
