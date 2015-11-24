@@ -37,6 +37,18 @@ module SendgridApi
       request(:post, params)
     end
 
+    def v1!
+      @connection = nil
+      @endpoint   = URI(@endpoint).tap { |u| u.path = "/api" }.to_s
+      self
+    end
+
+    def v2!
+      @connection = nil
+      @endpoint   = URI(@endpoint).tap { |u| u.path = "/apiv2" }.to_s
+      self
+    end
+
     private
 
     def self.logger

@@ -21,8 +21,7 @@ module SendgridApi
         private
 
         def client_settings
-          client.method = "user"
-          client.endpoint = "https://sendgrid.com/api"
+          client.v1!.method = "user"
         end
       end
     end

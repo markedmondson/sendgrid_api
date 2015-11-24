@@ -13,7 +13,7 @@ module SendgridApi
       @xsmtp ||= XSmtp.new(options[:xsmtp] || {})
       # @xsmtp.unique_args(transport: "api")
       super
-      set_endpoint("https://sendgrid.com/api/")
+      @client.v1!
     end
 
     # Send mail
