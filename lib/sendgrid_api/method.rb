@@ -31,14 +31,6 @@ module SendgridApi
 
     private
 
-    # If we're providing the client, the endpoint may need to be reset set
-    # @param [Client]
-    # @return [Client]
-    #
-    def set_endpoint(endpoint)
-      @client.instance_variable_set("@endpoint", endpoint)
-    end
-
     # If we're providing the client, the method needs to be set
     # @param [Client]
     # @return [Client]
