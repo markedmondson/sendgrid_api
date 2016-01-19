@@ -11,22 +11,24 @@ module SendgridApi
       let(:client)     { Client.new(config) }
 
       it "should create a Client instance" do
-        subject.client.should_not be_nil
+        expect(subject.client).to_not be_nil
       end
 
       it "should use the Client passed" do
         sub_user = SubUser.new(client, config)
-        sub_user.client.should eq(client)
+        expect(sub_user.client).to eq client
       end
 
       it "should set the method" do
-        subject.options[:method].should == "customer"
+        expect(subject.options[:method]).to eq "customer"
       end
     end
 
-    describe ".list", :vcr do
+    describe ".list", vcr: true do
       it "should return the list of sub users" do
-        subject.list({username: "user-test"}).body.should == [{
+        body = subject.list({username: "user-test"}).body
+
+        expect(body).to eq [{
           username:         "user-test",
           email:            "test@address.com",
           active:           "true",
@@ -45,7 +47,7 @@ module SendgridApi
       end
     end
 
-    describe ".create", :vcr do
+    describe ".create", vcr: true do
       let(:params) { {
         username:         "user-test",
         email:            "test@address.com",
@@ -70,23 +72,23 @@ module SendgridApi
 
       it "should return an error if a parameter is invalid" do
         result = subject.create(params.merge({username: ""}))
-        result.error?.should == true
-        result.message.should include("Username is required")
+        expect(result.error?).to eq true
+        expect(result.message).to include("Username is required")
       end
 
       it "should create a new user" do
-        subject.create(params).success?.should == true
+        expect(subject.create(params).success?).to eq true
       end
     end
 
-    describe ".update", :vcr do
+    describe ".update", vcr: true do
       let(:params) { {
         user:       "user-test",
         first_name: "updated"
       } }
 
       it "should update the user" do
-        subject.update(params).success?.should == true
+        expect(subject.update(params).success?).to eq true
       end
 
       it "should update the email address if passed" do
@@ -95,24 +97,24 @@ module SendgridApi
           email:    "new@address.com"
         }
 
-        subject.should_receive(:update_email).once.and_call_original
+        expect(subject).to receive(:update_email).once.and_call_original
 
-        subject.update(params).success?.should == true
+        expect(subject.update(params).success?).to eq true
       end
     end
 
-    describe ".update_email", :vcr do
+    describe ".update_email", vcr: true do
       let(:params) { {
         user:       "user-test",
         email:      "new@address.com"
       } }
 
       it "should update the user email" do
-        subject.update_email(params).success?.should == true
+        expect(subject.update_email(params).success?).to eq true
       end
     end
 
-    describe ".password", :vcr do
+    describe ".password", vcr: true do
       let(:params) { {
         user:             "user-test",
         password:         "updated",
@@ -120,19 +122,19 @@ module SendgridApi
       } }
 
       it "should update the user" do
-        subject.password(params).success?.should == true
+        expect(subject.password(params).success?).to eq true
       end
     end
 
-    describe ".enable", :vcr do
+    describe ".enable", vcr: true do
       it "should update the user" do
-        subject.enable(user).success?.should == true
+        expect(subject.enable(user).success?).to eq true
       end
     end
 
-    describe ".disable", :vcr do
+    describe ".disable", vcr: true do
       it "should update the user" do
-        subject.disable(user).success?.should == true
+        expect(subject.disable(user).success?).to eq true
       end
     end
   end

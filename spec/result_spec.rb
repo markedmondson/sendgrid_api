@@ -6,17 +6,17 @@ module SendgridApi
 
     describe ".success?" do
       it "should return true for a successful response" do
-        Result.new({message: "success"}).success?.should == true
+        expect(Result.new({message: "success"}).success?).to eq(true)
       end
 
       it "should return false for an unsuccessful response" do
-        Result.new(error_json).success?.should == false
+        expect(Result.new(error_json).success?).to eq(false)
       end
     end
 
     describe ".message" do
       it "should return the error message for a failed response" do
-        Result.new(error_json).message.should == "Message"
+        expect(Result.new(error_json).message).to eq("Message")
       end
     end
   end

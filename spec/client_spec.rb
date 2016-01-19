@@ -8,11 +8,11 @@ module SendgridApi
         subject(:client) { Client.new }
 
         it "should set the default format to json" do
-          subject.format.should == :json
+          expect(subject.format).to eq :json
         end
 
         it "should initialize a logger" do
-          subject.logger.should_not be_nil
+          expect(subject.logger).not_to be_nil
         end
       end
 
@@ -29,11 +29,11 @@ module SendgridApi
     describe ".get" do
       subject(:client) { Client.new(config.merge(method: "customer")) }
 
-      it "should return back a result", :vcr do
+      it "should return back a result", vcr: true do
         expect(subject.get("profile", "get")).to be_kind_of(Result)
       end
 
-      context "with invalid authentication params", :vcr do
+      context "with invalid authentication params", vcr: true do
         subject(:client) { Client.new(config.merge(api_key: "invalid", method: "customer")) }
 
         it "should raise an exception" do
@@ -41,7 +41,7 @@ module SendgridApi
         end
       end
 
-      context "with missing path params", :vcr do
+      context "with missing path params", vcr: true do
         subject(:client) { Client.new(config.merge({method: nil})) }
 
         it "should raise an exception" do
@@ -49,7 +49,7 @@ module SendgridApi
         end
       end
 
-      context "with valid params", :vcr do
+      context "with valid params", vcr: true do
         it "should call the requested method" do
           result = subject.get("profile", "get")
           expect(result.success?).to eq true
@@ -60,10 +60,10 @@ module SendgridApi
       context "when the response cannot be parsed" do
         it "should throw an exception and log the error" do
           logger = double(:logger)
-          logger.stub(:error).with(an_instance_of(String)) do |error|
+          allow(logger).to receive(:error).with(an_instance_of(String)) do |error|
             expect(error).to eq "Unable to parse Sendgrid API response: SendgridApi::Error::ParserError"
           end
-          logger.stub(:debug)
+          allow(logger).to receive(:debug)
 
           subject = Client.new(config.merge(method: "customer", logger: logger))
 

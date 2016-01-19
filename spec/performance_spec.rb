@@ -23,7 +23,7 @@ module SendgridApi
             subject.post("send", nil, simple_message)
           }
         end
-        expect(time / RUN_TIMES).to < 0.25
+        expect(time / RUN_TIMES).to be < 0.25
       end
     end
 
@@ -40,7 +40,7 @@ module SendgridApi
             subject.send(:request, :post, message)
           }
         end
-        expect(time / RUN_TIMES).to < 0.25
+        expect(time / RUN_TIMES).to be < 0.25
       end
     end
 
@@ -51,9 +51,11 @@ module SendgridApi
         before { params }
 
         it "should url encode the hash" do
-          Benchmark.realtime {
-            params.to_query
-          }.should < 0.10
+          expect(
+            Benchmark.realtime {
+              params.to_query
+            }
+          ).to be < 0.10
         end
       end
 
@@ -63,25 +65,31 @@ module SendgridApi
         before { client }
 
         it "should initialize" do
-          Benchmark.realtime {
-            client.send(:connection)
-          }.should < 0.10
+          expect(
+            Benchmark.realtime {
+              client.send(:connection)
+            }
+          ).to be < 0.10
         end
 
         it "should post" do
           connection = client.send(:connection)
 
-          Benchmark.realtime {
-            connection.post("mail.send.json", message)
-          }.should < 0.25
+          expect(
+            Benchmark.realtime {
+              connection.post("mail.send.json", message)
+            }
+          ).to be < 0.25
         end
 
-        it "should post with vcr", :vcr do
+        it "should post with vcr", vcr: true do
           connection = client.send(:connection)
 
-          Benchmark.realtime {
-            connection.post("mail.send.json", message)
-          }.should < 0.25
+          expect(
+            Benchmark.realtime {
+              connection.post("mail.send.json", message)
+            }
+          ).to be < 0.25
         end
       end
     end
@@ -120,9 +128,11 @@ module SendgridApi
       it "should render a message" do
         expect_any_instance_of(Mail).to receive(:queue) { result }
 
-        Benchmark.realtime {
-          subject.deliver!(mail)
-        }.should < 0.05
+        expect(
+          Benchmark.realtime {
+            subject.deliver!(mail)
+          }
+        ).to be < 0.05
       end
     end
 
@@ -145,7 +155,7 @@ module SendgridApi
             connection.get("/test")
           }
         end
-        (time / RUN_TIMES).should < 0.05
+        expect(time / RUN_TIMES).to be < 0.05
       end
     end
   end
