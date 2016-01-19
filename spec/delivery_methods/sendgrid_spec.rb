@@ -6,7 +6,7 @@ module Mail
 
     describe ".initialize" do
       it "should initialize a new SendgridApi::Client" do
-        subject.client.should be_kind_of(SendgridApi::Client)
+        expect(subject.client).to be_kind_of(SendgridApi::Client)
       end
     end
 
@@ -30,7 +30,7 @@ module Mail
 
       context "valid email" do
         it "should return a successful response" do
-          subject.client.should_receive(:post).with(
+          expect(subject.client).to receive(:post).with(
             "send",
             nil,
             hash_including(
@@ -47,11 +47,11 @@ module Mail
 
           ).and_return(success)
 
-          subject.deliver!(mail).should == success
+          expect(subject.deliver!(mail)).to eq success
         end
 
         it "should build the headers" do
-          subject.client.should_receive(:post).with(
+          expect(subject.client).to receive(:post).with(
             "send",
             nil,
             hash_including(
@@ -64,7 +64,7 @@ module Mail
 
           ).and_return(success)
 
-          subject.deliver!(mail).should == success
+          expect(subject.deliver!(mail)).to eq success
         end
       end
 
@@ -80,7 +80,7 @@ module Mail
         }
 
         it "should return a successful response" do
-          subject.client.should_receive(:post).with(
+          expect(subject.client).to receive(:post).with(
             "send",
             nil,
             hash_including(
@@ -92,11 +92,11 @@ module Mail
             )
           ).and_return(success)
 
-          subject.deliver!(to_mail).should == success
+          expect(subject.deliver!(to_mail)).to eq success
         end
 
         it "should allow multiple recipients as a string" do
-          subject.client.should_receive(:post).with(
+          expect(subject.client).to receive(:post).with(
             "send",
             nil,
             hash_including(
@@ -105,7 +105,7 @@ module Mail
           ).and_return(success)
 
           to_mail.to = "to@address.com, and@address.com"
-          subject.deliver!(to_mail).should == success
+          expect(subject.deliver!(to_mail)).to eq success
         end
       end
 
@@ -141,7 +141,7 @@ module Mail
           let(:to) { Mail::Address.new("to@address.com").tap { |m| m.display_name = "José Publico" }.encoded }
 
           it "should send successfully" do
-            subject.client.should_receive(:post).with(
+            expect(subject.client).to receive(:post).with(
               "send",
               nil,
               hash_including(
@@ -152,7 +152,7 @@ module Mail
               )
             ).and_return(success)
 
-            subject.deliver!(mail).should == success
+            expect(subject.deliver!(mail)).to eq success
           end
         end
       end
@@ -170,7 +170,7 @@ module Mail
         }
 
         it "should return a successful response with BCC addresses only" do
-          subject.client.should_receive(:post).with(
+          expect(subject.client).to receive(:post).with(
             "send",
             nil,
             hash_including(
@@ -179,11 +179,11 @@ module Mail
             )
           ).and_return(success)
 
-          subject.deliver!(bcc_mail).should == success
+          expect(subject.deliver!(bcc_mail)).to eq success
         end
 
         it "should allow multiple recipients as a string" do
-          subject.client.should_receive(:post).with(
+          expect(subject.client).to receive(:post).with(
             "send",
             nil,
             hash_including(
@@ -192,18 +192,18 @@ module Mail
           ).and_return(success)
 
           bcc_mail.to = "bcc@address.com, and@address.com"
-          subject.deliver!(bcc_mail).should == success
+          expect(subject.deliver!(bcc_mail)).to eq success
         end
 
         it "should allow an empty bcc" do
-          subject.client.should_receive(:post).with(
+          expect(subject.client).to receive(:post).with(
             "send",
             nil,
             hash_excluding(:bcc)
           ).and_return(success)
 
           bcc_mail.bcc = nil
-          subject.deliver!(bcc_mail).should == success
+          expect(subject.deliver!(bcc_mail)).to eq success
         end
       end
 
@@ -219,7 +219,7 @@ module Mail
         }
 
         it "should return a successful response" do
-          subject.client.should_receive(:post).with(
+          expect(subject.client).to receive(:post).with(
             "send",
             nil,
             hash_including(
@@ -229,13 +229,13 @@ module Mail
             )
           ).and_return(success)
 
-          subject.deliver!(from_mail).should == success
+          expect(subject.deliver!(from_mail)).to eq success
         end
       end
 
       context "invalid mail" do
         before do
-          subject.client.should_receive(:post).never
+          expect(subject.client).to receive(:post).never
         end
 
         it "should raise an error" do
@@ -247,7 +247,7 @@ module Mail
         let(:failure) { SendgridApi::Result.new({error: {message: "Something went wrong"}}) }
 
         before do
-          subject.client.should_receive(:post).and_return(failure)
+          expect(subject.client).to receive(:post).and_return(failure)
         end
 
         it "should raise an exception" do
@@ -268,10 +268,10 @@ module Mail
 
       it "should remove values from the header" do
         hash_keys = subject.send(:header_to_hash, mail).keys
-        hash_keys.should_not include("To")
-        hash_keys.should_not include("From")
-        hash_keys.should_not include("Subject")
-        hash_keys.should     include("Reply-To")
+        expect(hash_keys).not_to include("To")
+        expect(hash_keys).not_to include("From")
+        expect(hash_keys).not_to include("Subject")
+        expect(hash_keys).to     include("Reply-To")
       end
     end
   end

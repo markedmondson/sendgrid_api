@@ -60,10 +60,10 @@ module SendgridApi
       context "when the response cannot be parsed" do
         it "should throw an exception and log the error" do
           logger = double(:logger)
-          logger.stub(:error).with(an_instance_of(String)) do |error|
+          allow(logger).to receive(:error).with(an_instance_of(String)) do |error|
             expect(error).to eq "Unable to parse Sendgrid API response: SendgridApi::Error::ParserError"
           end
-          logger.stub(:debug)
+          allow(logger).to receive(:debug)
 
           subject = Client.new(config.merge(method: "customer", logger: logger))
 

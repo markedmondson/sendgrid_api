@@ -15,13 +15,13 @@ module SendgridApi
 
     describe ".list_apps" do
       it "should return the available apps" do
-        subject.list_apps(user).body.should include_app("domainkeys", false)
+        expect(subject.list_apps(user).body).to include_app("domainkeys", false)
       end
     end
 
     describe ".activate_app" do
       it "should activate an app for the user" do
-        subject.activate_app(user.merge(name: "domainkeys")).body.should == {message: "success"}
+        expect(subject.activate_app(user.merge(name: "domainkeys")).body).to eq({message: "success"})
       end
     end
 
@@ -30,20 +30,20 @@ module SendgridApi
       let(:params)   { user.merge(settings) }
 
       it "should setup the domainkeys app" do
-        subject.setup_domainkeys_app(params).body.should == {message: "success"}
-        subject.app_settings(user.merge(name: "domainkeys")).body.should == { settings: settings }
+        expect(subject.setup_domainkeys_app(params).body).to eq({message: "success"})
+        expect(subject.app_settings(user.merge(name: "domainkeys")).body).to eq({ settings: settings })
       end
 
       it "should enable the app by default" do
-        subject.should receive(:activate_app)
-        subject.setup_domainkeys_app(params).body.should == {message: "success"}
-        subject.list_apps(user).body.should include_app("domainkeys", true)
+        expect(subject).to receive(:activate_app)
+        expect(subject.setup_domainkeys_app(params).body).to eq({message: "success"})
+        expect(subject.list_apps(user).body).to include_app("domainkeys", true)
       end
 
       it "can setup the app and not enable it" do
-        subject.should_not receive(:activate_app)
-        subject.setup_domainkeys_app(params.merge(enable: false)).body.should == {message: "success"}
-        subject.list_apps(user).body.should include_app("domainkeys", false)
+        expect(subject).not_to receive(:activate_app)
+        expect(subject.setup_domainkeys_app(params.merge(enable: false)).body).to eq({message: "success"})
+        expect(subject.list_apps(user).body).to include_app("domainkeys", false)
       end
     end
 
@@ -52,8 +52,8 @@ module SendgridApi
       let(:params)   { user.merge(settings) }
 
       it "should setup the address whitelist app" do
-        subject.setup_addresswhitelist_app(params).body.should == {message: "success"}
-        subject.app_settings(user.merge(name: "addresswhitelist")).body.should == {settings: settings}
+        expect(subject.setup_addresswhitelist_app(params).body).to eq({message: "success"})
+        expect(subject.app_settings(user.merge(name: "addresswhitelist")).body).to eq({settings: settings})
       end
     end
 
@@ -62,7 +62,7 @@ module SendgridApi
       let(:params)   { user.merge(settings) }
 
       it "should setup the eventnotify app with default settings" do
-        subject.should receive(:setup_app).with(
+        expect(subject).to receive(:setup_app).with(
           hash_including(
             user:        "user-test",
             url:         "http//www.google.com",
@@ -80,7 +80,7 @@ module SendgridApi
 
     describe ".setup_clicktrack" do
       it "should setup the clicktrack app with default settings" do
-        subject.should receive(:setup_app).with(
+        expect(subject).to receive(:setup_app).with(
           hash_including(
             user:        "user-test",
             enable_text: 1

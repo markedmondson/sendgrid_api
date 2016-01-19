@@ -32,7 +32,7 @@ module SendgridApi
           it "should parse and return the JSON body" do
             response = @conn.get('http://localhost/200')
 
-            response.body.should be_instance_of(Hash)
+            expect(response.body).to be_instance_of(Hash)
           end
         end
 
