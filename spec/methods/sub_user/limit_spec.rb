@@ -13,7 +13,7 @@ module SendgridApi
       end
 
       it "should return an error if the user doesn't exist" do
-        subject.get_limit({user: "user-missing"}).success?.should == false
+        expect { subject.get_limit({user: "user-missing"}) }.to raise_error SendgridApi::Error::ClientError
       end
     end
 

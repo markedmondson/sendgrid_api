@@ -15,6 +15,7 @@ module SendgridApi
         stubs = Faraday::Adapter::Test::Stubs.new do |stub|
           stub.get('/200') { [200, { 'content-type' => 'application/json' }, @json] }
           stub.get('/401') { [200, { 'content-type' => 'application/json' }, @auth] }
+          stub.get('/413') { [413, { 'content-type' => 'application/html' }, ""] }
           stub.get('/502') { [502, { 'content-type' => 'application/html' }, @html] }
         end
 
@@ -38,6 +39,10 @@ module SendgridApi
         context "when the result body contains the status code" do
           it "should set the response status code to that in the body" do
             expect { @conn.get('http://localhost/401') }.to raise_error SendgridApi::Error::AuthenticationError
+          end
+
+          it "should catch all other 400 status codes" do
+            expect { @conn.get('http://localhost/413') }.to raise_error SendgridApi::Error::ClientError
           end
         end
 

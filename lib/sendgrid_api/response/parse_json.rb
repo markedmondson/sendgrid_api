@@ -32,6 +32,8 @@ module SendgridApi
           raise SendgridApi::Error::AuthenticationError.new(message)
         elsif status >= 500 && status < 600
           raise SendgridApi::Error::ApiException.new("SendgridApi call unsuccessful. Try again later.")
+        elsif status >= 400
+          raise SendgridApi::Error::ClientError.new(message)
         end
       end
 
