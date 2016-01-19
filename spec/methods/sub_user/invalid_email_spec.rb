@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module SendgridApi
-  describe "sub_user/invalid_email", :vcr do
+  describe "sub_user/invalid_email", vcr: true do
     subject(:sub_user) { SendgridApi::SubUser.new(nil, config) }
     let(:user) { {
       user: "api-test",

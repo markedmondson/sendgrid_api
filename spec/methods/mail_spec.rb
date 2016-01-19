@@ -25,15 +25,15 @@ describe "mail" do
     end
   end
 
-  describe ".queue", :vcr do
-    let(:simple_message) { {from: "from@email.com", to: "to@email.com", subject: "Rspec test", text: "text", html: "html"} }
+  describe ".queue", vcr: true do
+    let(:message) { {from: "from@email.com", to: "mark@guestfolio.com", subject: "Rspec test", text: "text", html: "html"} }
 
     it "should throw an error when there are missing params" do
       expect { subject.queue }.to raise_error SendgridApi::Error::OptionsError
     end
 
     it "should send an email" do
-      subject.queue(simple_message)
+      subject.queue(message)
         .success?.should == true
     end
 
@@ -41,9 +41,9 @@ describe "mail" do
       subject.client.should_receive(:post).once.with(
         "send",
         nil,
-        simple_message
+        message
       )
-      subject.queue(simple_message.merge({ bcc: nil, replyto: nil }))
+      subject.queue(message.merge({ bcc: nil, replyto: nil }))
     end
 
     it "should include x-smtpapi headers" do
@@ -51,9 +51,9 @@ describe "mail" do
       subject.client.should_receive(:post).once.with(
         "send",
         nil,
-        simple_message.merge("x-smtpapi".to_sym => openclick.to_json)
+        message.merge("x-smtpapi".to_sym => openclick.to_json)
       )
-      subject.queue(simple_message)
+      subject.queue(message)
     end
   end
 

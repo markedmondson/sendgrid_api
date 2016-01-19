@@ -24,7 +24,7 @@ module SendgridApi
       end
     end
 
-    describe ".list", :vcr do
+    describe ".list", vcr: true do
       it "should return the list of sub users" do
         subject.list({username: "user-test"}).body.should == [{
           username:         "user-test",
@@ -45,7 +45,7 @@ module SendgridApi
       end
     end
 
-    describe ".create", :vcr do
+    describe ".create", vcr: true do
       let(:params) { {
         username:         "user-test",
         email:            "test@address.com",
@@ -79,7 +79,7 @@ module SendgridApi
       end
     end
 
-    describe ".update", :vcr do
+    describe ".update", vcr: true do
       let(:params) { {
         user:       "user-test",
         first_name: "updated"
@@ -101,7 +101,7 @@ module SendgridApi
       end
     end
 
-    describe ".update_email", :vcr do
+    describe ".update_email", vcr: true do
       let(:params) { {
         user:       "user-test",
         email:      "new@address.com"
@@ -112,7 +112,7 @@ module SendgridApi
       end
     end
 
-    describe ".password", :vcr do
+    describe ".password", vcr: true do
       let(:params) { {
         user:             "user-test",
         password:         "updated",
@@ -124,13 +124,13 @@ module SendgridApi
       end
     end
 
-    describe ".enable", :vcr do
+    describe ".enable", vcr: true do
       it "should update the user" do
         subject.enable(user).success?.should == true
       end
     end
 
-    describe ".disable", :vcr do
+    describe ".disable", vcr: true do
       it "should update the user" do
         subject.disable(user).success?.should == true
       end

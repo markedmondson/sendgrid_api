@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module SendgridApi
-  describe "sub_user/app", :vcr do
+  describe "sub_user/app", vcr: true do
     matcher :include_app do |name, active=true|
       match do |actual|
         actual.any? { |a| a[:name] == name && a[:activated] == active }
