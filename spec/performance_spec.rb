@@ -23,7 +23,7 @@ module SendgridApi
             subject.post("send", nil, simple_message)
           }
         end
-        expect(time / RUN_TIMES).to < 0.25
+        expect(time / RUN_TIMES).to be < 0.25
       end
     end
 
@@ -40,7 +40,7 @@ module SendgridApi
             subject.send(:request, :post, message)
           }
         end
-        expect(time / RUN_TIMES).to < 0.25
+        expect(time / RUN_TIMES).to be < 0.25
       end
     end
 
@@ -51,11 +51,11 @@ module SendgridApi
         before { params }
 
         it "should url encode the hash" do
-          expect {
+          expect(
             Benchmark.realtime {
               params.to_query
             }
-          }.to < 0.10
+          ).to be < 0.10
         end
       end
 
@@ -65,31 +65,31 @@ module SendgridApi
         before { client }
 
         it "should initialize" do
-          expect {
+          expect(
             Benchmark.realtime {
               client.send(:connection)
             }
-          }.to < 0.10
+          ).to be < 0.10
         end
 
         it "should post" do
           connection = client.send(:connection)
 
-          expect {
+          expect(
             Benchmark.realtime {
               connection.post("mail.send.json", message)
             }
-          }.to < 0.25
+          ).to be < 0.25
         end
 
         it "should post with vcr", vcr: true do
           connection = client.send(:connection)
 
-          expect {
+          expect(
             Benchmark.realtime {
               connection.post("mail.send.json", message)
             }
-          }.to < 0.25
+          ).to be < 0.25
         end
       end
     end
@@ -128,11 +128,11 @@ module SendgridApi
       it "should render a message" do
         expect_any_instance_of(Mail).to receive(:queue) { result }
 
-        expect {
+        expect(
           Benchmark.realtime {
             subject.deliver!(mail)
           }
-        }.to < 0.05
+        ).to be < 0.05
       end
     end
 
@@ -155,7 +155,7 @@ module SendgridApi
             connection.get("/test")
           }
         end
-        expect(time / RUN_TIMES).to < 0.05
+        expect(time / RUN_TIMES).to be < 0.05
       end
     end
   end
