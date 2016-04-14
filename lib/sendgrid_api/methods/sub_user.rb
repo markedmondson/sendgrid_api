@@ -104,6 +104,13 @@ module SendgridApi
       access("website_disable", options)
     end
 
+    # Setup subuser whitelabel domain
+    #
+    def setup_whitelabel(options = {})
+      validate_options(options, [:user, :mail_domain])
+      post("whitelabel", "append", options)
+    end
+
     private
 
     def access(action, options = {})

@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sendgrid.com/apiv2/customer.whitelabel.json
+    body:
+      encoding: UTF-8
+      string: api_key=api-key&api_user=api-user&mail_domain=missing.test.net&task=append&user=user-test
+    headers:
+      Accept:
+      - application/#{format}
+      Accept-Charset:
+      - utf-8
+      User-Agent:
+      - SendgridApi Ruby Gem v1.2.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - cloudflare-nginx
+      Date:
+      - Thu, 14 Apr 2016 00:19:18 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d65ef2dbdeed8675e43cde5012ba4894f1460593157; expires=Fri, 14-Apr-17
+        00:19:17 GMT; path=/; domain=.sendgrid.com; HttpOnly
+      - sendgrid_frontend=c4f1a7c9268d2067a07b17ae7b693939:e56ee7eb4980aa0af45b32826b064e08556d6a0b;
+        path=/; secure; httponly
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Vary:
+      - Accept-Encoding
+      Cf-Ray:
+      - 2932fc45032a3b50-YVR
+    body:
+      encoding: UTF-8
+      string: '{"message":"error","errors":["Whitelabel record not found"]}'
+    http_version:
+  recorded_at: Thu, 14 Apr 2016 00:19:18 GMT
+recorded_with: VCR 2.9.0
