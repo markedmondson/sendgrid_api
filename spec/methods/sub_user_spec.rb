@@ -137,5 +137,17 @@ module SendgridApi
         expect(subject.disable(user).success?).to eq true
       end
     end
+
+    describe ".setup_whitelabel", vcr: true do
+      it "should update the subuser whitelabel domain" do
+        expect(subject.setup_whitelabel(user.merge(mail_domain: "email.test.net")).success?).to eq true
+      end
+
+      context "for a missing whitelabel domain" do
+        it "should return an error" do
+          expect(subject.setup_whitelabel(user.merge(mail_domain: "missing.test.net")).message).to include "Whitelabel record not found"
+        end
+      end
+    end
   end
 end
