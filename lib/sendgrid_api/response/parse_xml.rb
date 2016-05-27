@@ -1,5 +1,4 @@
 require 'faraday_middleware'
-require 'multi_xml'
 
 module SendgridApi
   module Response

@@ -3,7 +3,6 @@ require "bundler/setup"
 
 require 'sendgrid_api'
 require 'webmock'
-require 'multi_json'
 require 'vcr'
 require 'pry'
 
@@ -24,5 +23,3 @@ def config
     api_user: "api-user"
   }
 end
-
-Log4r::Logger.global.outputters = Log4r::Outputter.stdout
