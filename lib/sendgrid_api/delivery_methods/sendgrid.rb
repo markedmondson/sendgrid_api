@@ -51,8 +51,8 @@ module Mail
         fromname: from.display_name,
         bcc:      bcc,
         subject:  mail.subject,
-        text:     mail.text_part.blank? ? nil : mail.text_part.body,
-        html:     mail.html_part.blank? ? nil : mail.html_part.body,
+        text:     mail.text_part.to_s.length > 0 && mail.text_part.body,
+        html:     mail.html_part.to_s.length > 0 && mail.html_part.body,
         headers:  header_to_hash(mail).to_json
       )
       raise SendgridApi::Error::DeliveryError.new(result.message) if result.error?
@@ -66,7 +66,10 @@ module Mail
       if defined?(super)
         super
       else
-        raise ArgumentError.new("Missing required mail part") if (mail.from.blank? || mail.to.blank? || (mail.html_part.blank? && mail.text_part.blank?))
+        blank = proc { |t| t.nil? || t.empty? }
+        if [mail.from, mail.to].any?(&blank) || [mail.html_part, mail.text_part].all?(&blank)
+          raise ArgumentError.new("Missing required mail part")
+        end
       end
     end
 

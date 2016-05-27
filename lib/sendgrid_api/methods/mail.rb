@@ -21,7 +21,7 @@ module SendgridApi
     #
     def queue(options = {})
       validate_options(options, [:to, :from, :subject, :text, :html])
-      options.reject!{ |k, v| v.blank? }
+      options.reject!{ |k, v| v.nil? || v && v.empty? }
       options.merge!(x_smtpapi) unless @xsmtp.empty?
       post("send", nil, options)
     end
