@@ -4,7 +4,7 @@ require 'sendgrid_api/default'
 module SendgridApi
   module Configurable
     extend Forwardable
-    attr_accessor :api_user, :api_key, :endpoint, :connection_options, :middleware, :format
+    attr_accessor :api_user, :api_key, :endpoint, :connection_options, :middleware, :format, :logger
     def_delegator :options, :hash
 
     class << self
@@ -16,7 +16,8 @@ module SendgridApi
           :endpoint,
           :connection_options,
           :middleware,
-          :format
+          :format,
+          :logger
         ]
       end
 

@@ -14,7 +14,7 @@ module SendgridApi
     # @return [SendgridApi::Client]
     #
     def initialize(options={})
-      @logger = options.delete(:logger) || self.class.logger
+      @logger = options.delete(:logger) || SendgridApi.logger
       SendgridApi::Configurable.keys.each do |key|
         instance_variable_set(:"@#{key}", options[key] || SendgridApi.instance_variable_get(:"@#{key}"))
       end
@@ -50,10 +50,6 @@ module SendgridApi
     end
 
     private
-
-    def self.logger
-      Log4r::Logger.new("sendgrid_api::client")
-    end
 
     # @return [Boolean]
     #

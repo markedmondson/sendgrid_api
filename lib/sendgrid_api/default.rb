@@ -1,3 +1,4 @@
+require 'logger'
 require 'faraday'
 require 'faraday/request/multipart'
 require 'sendgrid_api/configurable'
@@ -63,6 +64,10 @@ module SendgridApi
           # Set Faraday's HTTP adapter
           builder.adapter Faraday.default_adapter
         end
+      end
+
+      def logger
+        @logger ||= Logger.new(STDOUT)
       end
 
     end

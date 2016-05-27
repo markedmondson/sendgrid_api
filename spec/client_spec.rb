@@ -12,7 +12,7 @@ module SendgridApi
         end
 
         it "should initialize a logger" do
-          expect(subject.logger).not_to be_nil
+          expect(subject.logger.respond_to?(:debug)).to be true
         end
       end
 
