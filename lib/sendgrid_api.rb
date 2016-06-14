@@ -1,4 +1,3 @@
-require 'log4r'
 require 'mail'
 require 'sendgrid_api/configurable'
 require 'sendgrid_api/delivery_methods/sendgrid'

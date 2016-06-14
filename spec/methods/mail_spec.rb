@@ -21,7 +21,7 @@ describe "mail" do
     end
 
     it "should reset the Client endpoint" do
-      expect(subject.client.instance_variable_get("@endpoint")).to eq "https://sendgrid.com/api/"
+      expect(subject.client.instance_variable_get("@endpoint")).to eq "https://sendgrid.com/api"
     end
   end
 
